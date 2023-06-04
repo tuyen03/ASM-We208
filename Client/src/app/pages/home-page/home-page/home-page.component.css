@@ -5,7 +5,7 @@
 
 main {
   width: 98.9vw;
-  height: 2700px;
+  height: 2800px;
 }
 
 .products_by_category {
@@ -359,6 +359,7 @@ main {
 }
 .Menu .Menu_Product .Menu_Product_child .Menu_Product_item {
   border-radius: 10px;
+  border: 1px solid #E5E5E5;
 }
 .Menu .Menu_Product .Menu_Product_child .Menu_Product_item .Menu_Product_item_img {
   width: 100%;

@@ -4,7 +4,7 @@
 }
 main{
     width: 98.9vw;
-    height: 2700px;
+    height: 2800px;
 }
 $dangerous : #e3000e;
 $warning: #ffc107;
@@ -357,6 +357,7 @@ $blod : #FF6D60;
             row-gap: 20px;
             .Menu_Product_item{
                 border-radius: 10px;
+                border: 1px solid #E5E5E5;
                 .Menu_Product_item_img{
                     width: 100%;
                     height: 60%;
