@@ -2,6 +2,12 @@
     background-image: url("https://testo-livid.vercel.app/_next/static/media/menu-page.025d6e76.jpg");
 }
 
+#footer {
+    background-image: url("https://testo-livid.vercel.app/_next/static/media/bg-01.b2b7a1ca.jpg");
+}
+
+.hehe {}
+
 .item,
 .item-dropdown {
     font-weight: bold;
