@@ -6,6 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { HomePageComponent } from './pages/home-page/home-page/home-page.component';
 import { HttpClientModule } from "@angular/common/http";
+
+
+
+
+
 import { LayoutMenuComponent } from './layouts/layout-menu/layout-menu.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 @NgModule({
@@ -13,6 +18,10 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     AppComponent,
     HomeLayoutComponent,
     HomePageComponent,
+
+
+
+    
     LayoutMenuComponent,
     ProductPageComponent
   ],
