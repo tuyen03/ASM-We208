@@ -8,13 +8,17 @@ import { HomePageComponent } from './pages/home-page/home-page/home-page.compone
 import { HttpClientModule } from "@angular/common/http";
 import { LayOutAdminComponent } from './layouts/Admin/lay-out-admin/lay-out-admin.component';
 import { DashBoardComponent } from './pages/Admin/dash-board/dash-board.component';
+import { LayoutMenuComponent } from './layouts/layout-menu/layout-menu.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeLayoutComponent,
     HomePageComponent,
     LayOutAdminComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    LayoutMenuComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
