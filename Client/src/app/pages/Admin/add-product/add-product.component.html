@@ -1,0 +1,69 @@
+<div class="Product_Wall">
+    <div class="Product_Wall_title">
+            <h1>Add New Product</h1>
+    </div>
+    <div class="Form_add">
+        <form action="">
+            <div class="Form_add_infomation">
+                <div class="Form_add_title">
+                    <div class="Form_add_title">
+                        <h2>Basic Information</h2>
+                        <p>Section to config basic product information</p>
+                    </div>
+                </div>
+                <div class="Form_Attribute">
+                    <div class="Form_Name">
+                        <div class="Form_Name_title">
+                            <h4>Product Name</h4>
+                        </div>
+                        <div class="Form_Name_Input">
+                            <input type="text" placeholder="Product Name" class="InputName">
+                        </div>
+                    </div>
+                    <div class="Form_Price">
+                        <div class="Form_Price_title">
+                            <h4>Product Price</h4>
+                        </div>
+                        <div class="Form_Price_Input">
+                            <input type="text" placeholder="Product Price" class="InputPrice">
+                        </div>
+                    </div>
+                    <div class="Form_kg">
+                        <div class="Form_kg_title">
+                            <h4>Product Kilogram</h4>
+                        </div>
+                        <div class="Form_kg_Input">
+                            <input type="text" placeholder="Product Kilogram" class="InputKg">
+                        </div>
+                    </div>
+                    <div class="Form_Desctiption">
+                        <div class="Form_Desctiption_title">
+                            <h4>Product Kilogram</h4>
+                        </div>
+                        <div class="Form_Desctiption_Input">
+                            <ckeditor [editor]="Editor" class="Cke" ></ckeditor>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Form_add_Image">
+                <div class="Form_add_Image_title">
+                    <h2>Product Image</h2>
+                    <p>Add or change image for the product</p>
+                </div>
+                <div class="Form_Image">
+                    <div class="Form_Image_wall">
+                        <div class="Posion_Image">
+                            <img src="../../../../assets/images/upload.png" alt="">
+                            <p><span>Drop your image here, or </span> <span class="blue">browse</span></p>
+                            <p class="title_img">Support: jpeg, png   </p>
+                        </div>
+                        <div class="Form_Image_wall1">
+                        <input type="file" class="file_image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

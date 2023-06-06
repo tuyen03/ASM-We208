@@ -11,6 +11,10 @@ const CheckValidate = joi.object({
     "number.empty": "Number không được để trống",
     "any.required": "Trường password là bắt buộc",
   }),
+  Product_KG: joi.number().required().empty().messages({
+    "number.empty": "Number không được để trống",
+    "any.required": "Trường password là bắt buộc",
+  }),
   Product_Image: joi.string().required().empty().messages({
     "string.empty": "Password không được để trống",
     "any.required": "Trường password là bắt buộc",
