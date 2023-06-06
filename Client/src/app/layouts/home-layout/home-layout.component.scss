@@ -1,0 +1,262 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+$warning: #ffc107;
+
+
+//todo Start Header
+header{
+    width: 98.9vw;
+    height : 877px;
+    position: relative;
+    .Header_img{
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+footer{
+    width: 1514px;
+    height : 400px;
+    // background-color: red;
+}
+.Nav{
+    width: 50%;
+    height: 120px;
+    position: absolute;
+    margin: 20px 0px 0px 380px;
+    display: flex;
+    .Nav_1{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        a{
+            text-decoration: none;
+            font-family: 'Oswald';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 17.52px;
+            color: #F7F7F7;
+            &:hover {
+                cursor: pointer;
+                color: $warning;
+                transition: 0.4s;
+            }
+        }
+    }
+    .Nav_Image{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 90%;
+            height: 80%;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    .Nav_2{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        a{
+            text-decoration: none;
+            font-family: 'Oswald';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 17.52px;
+            color: #F7F7F7;
+            &:hover {
+                cursor: pointer;
+                color: $warning;
+                transition: 0.4s;
+            }
+        }
+    }
+}
+//todo End Header
+
+//todo Start Footer
+footer{
+    width: 98.9vw;
+    height : 500px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .Footer_Backgound{
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .Footer_Content{
+        width: 60%;
+        height: 40%;
+        position: absolute;
+        display: flex;
+        .Footer_Content_location{
+            width: 25%;
+            height: 100%;
+            .Footer_Content_location_h1{
+                width: 100%;
+                height: 30%;
+                // background-color: rebeccapurple;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h1{
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 27px;
+                }
+            }
+            .Footer_Content_location_p{
+                width: 100%;
+                height: 70%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+                p{
+                    font-family: 'Noto Serif', serif;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 17px;
+                }
+            }
+        }.Footer_Content_working{
+            width: 25%;
+            height: 100%;
+            .Footer_Content_working_h1{
+                width: 100%;
+                height: 30%;
+                // background-color: rebeccapurple;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h1{
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 27px;
+                }
+            }
+            .Footer_Content_working_p{
+                width: 100%;
+                height: 70%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+                p{
+                    font-family: 'Noto Serif', serif;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 17px;
+                }
+            }
+        }
+        .Footer_Content_order{
+            width: 25%;
+            height: 100%;
+            .Footer_Content_order_h1{
+                width: 100%;
+                height: 30%;
+                // background-color: rebeccapurple;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h1{
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 27px;
+                }
+            }
+            .Footer_Content_order_p{
+                width: 100%;
+                height: 70%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+                p{
+                    font-family: 'Noto Serif', serif;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 17px;
+                }
+                span{
+                    font-size: 30px;
+                    color: $warning;
+                    font-weight: 800;
+                }
+            }
+        }
+        .Footer_Content_Follow{
+            width: 25%;
+            height: 100%;
+            .Footer_Content_Follow_h1{
+                width: 100%;
+                height: 30%;
+                // background-color: rebeccapurple;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h1{
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 27px;
+                }
+            }
+            .Footer_Content_Follow_p{
+                width: 100%;
+                height: 70%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+                p{
+                    font-family: 'Noto Serif', serif;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 17px;
+                }
+                .Icon_media{
+                    width: 70%;
+                    height: 50px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    i{
+                        font-size: 1.5rem;
+                        color: #333333;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//todo End Footer
