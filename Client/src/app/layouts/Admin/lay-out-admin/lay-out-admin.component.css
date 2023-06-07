@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.wall {
+  width: 98.9vw;
+  height: 100vh;
+  display: flex;
+}
+.wall .Appbar {
+  width: 16%;
+  height: 100%;
+  background-color: #F3F4F6;
+}
+.wall .Appbar .logo {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wall .Appbar .logo .logo_wall {
+  width: 80%;
+  height: 100%;
+}
+.wall .Appbar .Menu {
+  width: 100%;
+  height: 40%;
+}
+.wall .Appbar .Menu .App {
+  width: 85%;
+  margin-left: 10%;
+  height: 100%;
+}
+.wall .Appbar .Menu .App .App_title {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 500;
+  color: #6B7280;
+}
+.wall .Appbar .Menu .App .App_menu {
+  width: 98%;
+  margin-left: 2%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
+}
+.wall .Appbar .Menu .App .App_menu:hover {
+  background-color: #E2E4E7;
+}
+.wall .Appbar .Menu .App .App_menu a {
+  padding: 15px 130px 15px 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #656E7A;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+}
+.wall .Appbar .Menu .App .App_menu a i {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+.wall .Container {
+  width: 84%;
+  height: 100%;
+}/*# sourceMappingURL=lay-out-admin.component.css.map */
