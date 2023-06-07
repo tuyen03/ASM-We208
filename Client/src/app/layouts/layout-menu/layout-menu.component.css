@@ -5,37 +5,52 @@
 #footer {
     background-image: url("https://testo-livid.vercel.app/_next/static/media/bg-01.b2b7a1ca.jpg");
 }
-
-.hehe {}
-
 .item,
 .item-dropdown {
     font-weight: bold;
-    color: white;
 }
 
 .item-dropdown:hover {
     color: #f7be27;
 }
 
-.dropdown-list {
-    position: absolute;
-    display: none;
+.dropdown-list-res {
     z-index: 1000;
-    width: 200px;
-    float: left;
     background-color: white;
     border-radius: 5px;
     padding: 10px;
 }
 
-.dropdown-list>li>a {
+.dropdown-list-res>li>a {
     color: gray;
     font-family: Roboto, sans-serif;
     font-size: 15px;
     font-weight: 500;
 }
 
-.dropdown:hover .dropdown-list {
-    display: grid;
+@media (min-width: 1280px) {
+    .dropdown-list {
+        position: absolute;
+        display: none;
+        z-index: 1000;
+        width: 200px;
+        float: left;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .dropdown-list>li>a {
+        color: gray;
+        font-family: Roboto, sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .dropdown:hover .dropdown-list {
+        display: grid;
+    }
+    .dropdown{
+        display: block;
+    }
 }

@@ -23,12 +23,12 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 
     
     LayoutMenuComponent,
-    ProductPageComponent
+    ProductPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
