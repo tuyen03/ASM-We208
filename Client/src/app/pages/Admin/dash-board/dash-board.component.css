@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.wall {
+  width: 100%;
+  height: 100%;
+}
+.wall .User {
+  width: 100%;
+  height: 7%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.wall .User .User_child {
+  width: 20%;
+  height: 100%;
+  background-color: rebeccapurple;
+}/*# sourceMappingURL=dash-board.component.css.map */
