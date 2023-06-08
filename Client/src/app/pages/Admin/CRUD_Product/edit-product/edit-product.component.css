@@ -210,6 +210,9 @@
   width: 90%;
   height: 90%;
 }
+.Product_Wall .Form_add .Form_add_Image .Form_Image .Form_Image_wall p {
+  font-size: 0.6rem;
+}
 .Product_Wall .Form_add .Form_add_Image .Form_Image .Form_Image_wall .Form_Image_wall1 {
   width: 100%;
   height: 60%;
@@ -304,4 +307,4 @@
 }
 .Add_Product_Click .Add_Product_Click_wall .buttomAdd button:hover {
   opacity: 0.9;
-}/*# sourceMappingURL=add-product.component.css.map */
+}/*# sourceMappingURL=edit-product.component.css.map */

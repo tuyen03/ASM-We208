@@ -1,19 +1,32 @@
 import { Component } from '@angular/core';
-import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import axios from 'axios';
 import { ProductService } from 'src/app/Service/product.service';
+
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.css']
+  selector: 'app-edit-product',
+  templateUrl: './edit-product.component.html',
+  styleUrls: ['./edit-product.component.css']
 })
-export class AddProductComponent {
+export class EditProductComponent {
   public Editor = ClassicEditor;
   public imageUrl: any;
   // FormData : any;
-  constructor(private Product : ProductService, private form : FormBuilder){
-
+  Product_id : any = {};
+  constructor(private Product : ProductService, private form : FormBuilder, private Get_id : ActivatedRoute, private Router : Router){
+    this.Get_id.params.subscribe(params =>{
+      this.Product.Get_Product_Id(params).subscribe(data =>{
+        this.Product_id = data;
+        this.FormData.patchValue({
+          Product_Name : this.Product_id.data.Product_Name,
+          Product_Price : this.Product_id.data.Product_Price,
+          Product_KG : this.Product_id.data.Product_KG,
+          Product_Description : this.Product_id.data.Product_Description,
+        })
+      })
+    })
   }
   FormData = this.form.group({
     Product_Name : ["", [Validators.required]],
@@ -22,18 +35,10 @@ export class AddProductComponent {
     Product_Description : ["", [Validators.required]],
   })
   ngOnInit(){
-    // this.FormData = this.form.group({
-    //   Product_Name : ["", [Validators.required]],
-    //   Product_Price : [0, [Validators.required]],
-    //   Product_KG : [0, [Validators.required]],
-    //   Product_Description : ["", [Validators.required]],
-    // })
+
   }
   async HandSubMit(){
-    console.log("aaaa");
-    
     if (this.FormData.valid) {
-    console.log("aaaa");
        const fileInput: any = document.getElementById('fileInput');
        if (this.FormData.value) {
           const cloud_name = "dsbiugddk";
@@ -49,6 +54,7 @@ export class AddProductComponent {
         .then(res => res.data);
          this.imageUrl = await res.secure_url;
          const PostData : any = {
+          _id : this.Product_id.data._id,
           Product_Name : this.FormData.value.Product_Name,
           Product_Price : this.FormData.value.Product_Price,
           Product_KG : this.FormData.value.Product_KG,
@@ -57,11 +63,13 @@ export class AddProductComponent {
         }
         console.log(PostData);
         
-        this.Product.Add_Product(PostData).subscribe((data) => {
-          console.log(data);
-          alert("Them Thanh cong")
+        this.Product.Update_Product(PostData).subscribe((data) => {
+          alert("Cập Nhật dữ liệu thành công");
+          // this.Router.navigateByUrl("Admin/Show_Product");
         })
       }
+    }else{
+      alert("Xin vui lòng nhập lại")
     }
   }
 }
