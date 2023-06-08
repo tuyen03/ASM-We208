@@ -1,5 +1,5 @@
-<header>
-    <div class="Nav">
+<header id="Header_img" class="w-full bg-cover bg-center">
+    <div class="Nav hidden xl:flex">
         <div class="Nav_1">
             <a href="">HOME</a>
             <a href="">OUR MENU</a>
@@ -14,14 +14,30 @@
             <a href="">SHOP</a>
         </div>
     </div>
-    <div class="Header_img">
-        <img src="assets/images/Section.png" alt="">
+    <!-- menu respon -->
+    <div class="xl:hidden bg-white px-12 w-full mx-auto items-center text-center fixed justify-between ">
+        <div class=" my-3 grid grid-cols-5 w-full mx-auto items-center">
+            <img src="https://testo-livid.vercel.app/images/logo-01.png" width="120px"
+                class="col-end-4 col-span-1 mx-auto" alt="">
+            <img src="../../../../assets/images/icon/more.png" (click)="show()" class="ml-auto col-end-7 col-span-2"
+                alt="">
+        </div>
+        <div class="{{chill?'hidden':'block'}}">
+            <a class="block font-bold w-full whitespace-nowrap bg-transparent text-sm text-neutral-700 hover:bg-neutral-100"
+                href="">HOME</a>
+            <a class="block font-bold w-full whitespace-nowrap bg-transparent text-sm text-neutral-700 hover:bg-neutral-100"
+                href="">OUR MENU</a>
+            <a class="block font-bold w-full whitespace-nowrap bg-transparent text-sm text-neutral-700 hover:bg-neutral-100"
+                href="">SHOP</a>
+        </div>
     </div>
-
+    <!-- end -->
 </header>
+
 <router-outlet></router-outlet>
-<footer>
-    <div class="Footer_Content">
+
+<footer class="w-full bg-cover bg-center h-[450px]">
+    <div class="Footer_Content grid grid-cols-2 gap-5 xl:grid-cols-4">
         <div class="Footer_Content_location">
             <div class="Footer_Content_location_h1">
                 <h1>LOCATION</h1>
@@ -68,8 +84,4 @@
             </div>
         </div>
     </div>
-    <div class="Footer_Backgound">
-        <img src="https://jthemes.net/themes/html/testo/files/images/banner-4.jpg" alt="">
-    </div>
-
 </footer>

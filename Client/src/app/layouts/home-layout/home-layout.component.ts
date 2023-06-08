@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-layout.component.css']
 })
 export class HomeLayoutComponent {
-
+  chill = true;
+  show() {
+    this.chill = !this.chill;
+  };
 }

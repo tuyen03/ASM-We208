@@ -16,11 +16,8 @@ const routes: Routes = [
         path: "", component: HomeLayoutComponent, children: [
             { path: "", redirectTo: "", pathMatch: "full" },
             { path: "", component: HomePageComponent },
-
         ]
-
     },
-    { path: 'product/:id', component: ProductDetailComponent },
 
     { path: 'signin', component: SigninComponent },
     { path: 'signup', component: SignupComponent },
@@ -33,7 +30,8 @@ const routes: Routes = [
     },
     {
         path: "product", component: LayoutMenuComponent, children: [
-            { path: "", component: ProductPageComponent }
+            { path: "", component: ProductPageComponent },
+            { path: ':id', component: ProductDetailComponent }
         ]
     }
 ];
