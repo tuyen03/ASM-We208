@@ -9,6 +9,9 @@ import { LayOutAdminComponent } from './layouts/Admin/lay-out-admin/lay-out-admi
 import { DashBoardComponent } from './pages/Admin/dash-board/dash-board.component';
 import { LayoutMenuComponent } from './layouts/layout-menu/layout-menu.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { AddProductComponent } from './pages/Admin/add-product/add-product.component';
+import { ShowProductComponent } from './pages/Admin/CRUD_Product/show-product/show-product.component';
+import { EditProductComponent } from './pages/Admin/CRUD_Product/edit-product/edit-product.component';
 
 
 const routes: Routes = [
@@ -28,7 +31,11 @@ const routes: Routes = [
     {
         path: "Admin", component: LayOutAdminComponent, children: [
             { path: "", redirectTo: "DashBoard", pathMatch: "full" },
-            { path: "DashBoard", component: DashBoardComponent }
+            { path: "DashBoard", component: DashBoardComponent },
+            { path: "Add_Product", component: AddProductComponent },
+            {path : "Show_Product", component : ShowProductComponent},
+            {path : "Edit_Product/:id", component : EditProductComponent},
+
         ]
     },
     {
@@ -37,7 +44,6 @@ const routes: Routes = [
         ]
     }
 ];
-
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]

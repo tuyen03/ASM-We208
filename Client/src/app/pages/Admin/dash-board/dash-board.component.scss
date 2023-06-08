@@ -2,19 +2,19 @@
     padding: 0;
     margin: 0;
 }
-.wall{
-    width: 100%;
+
+.DashBoard_Wall{
+    width: 95%;
     height: 100%;
-    .User{
-        width: 100%;
-        height: 7%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        .User_child{
-            width: 20%;
-            height: 100%;
-            background-color: rebeccapurple;
-        }
+    margin: 0 auto;
+    .DashBoard_Wall_title{
+    width: 100%;
+    height: 10%;    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    h1{
+        font-family: inherit;
+    }
     }
 }

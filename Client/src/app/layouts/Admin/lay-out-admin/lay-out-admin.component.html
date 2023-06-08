@@ -11,10 +11,10 @@
                     <h3>APPS</h3>
                 </div>
                 <div class="App_menu">
-                    <a href=""><i class="fa-solid fa-circle-half-stroke"></i>DashBoard</a>
+                    <a href="Admin/DashBoard"><i class="fa-solid fa-circle-half-stroke"></i>DashBoard</a>
                 </div>
                 <div class="App_menu">
-                    <a href=""><i class="fa-regular fa-plus"></i>  Product</a>
+                    <a href="Admin/Add_Product"><i class="fa-regular fa-plus"></i>  Product</a>
                 </div>
                 <div class="App_menu">
                     <a href=""><i class="fa-regular fa-user"></i> User</a>
@@ -27,6 +27,24 @@
         </div>
     </div>
     <div class="Container">
-        <router-outlet></router-outlet>
+        <div class="wall1">
+            <div class="User">
+                <div class="User_child">
+                    <div class="User_child">
+                        <div class="User_child_img">
+                            <!-- <img src="https://hinhanhdephd.com/wp-content/uploads/2015/12/hinh-anh-dep-girl-xinh-hinh-nen-dep-gai-xinh.jpg" alt=""> -->
+                        </div>
+                        <div class="User_child_title">
+                            <h4>Admin</h4>
+                            <p>Carolyn Perkins</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
     </div>
 </div>

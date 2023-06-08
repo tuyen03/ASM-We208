@@ -2,6 +2,7 @@ import joi from "joi";
 import ProductSchame from "../Models/Product";
 
 const CheckValidate = joi.object({
+  _id: joi.string(),
   Product_Name: joi.string().required().empty().messages({
     "string.required": "Không được để trống",
     "any.required": "Trường password là bắt buộc",
@@ -11,9 +12,13 @@ const CheckValidate = joi.object({
     "number.empty": "Number không được để trống",
     "any.required": "Trường password là bắt buộc",
   }),
+  Product_KG: joi.number().required().empty().messages({
+    "number.empty": "Number không được để trống",
+    "any.required": "Trường password là bắt buộc",
+  }),
   Product_Image: joi.string().required().empty().messages({
     "string.empty": "Password không được để trống",
-    "any.required": "Trường password là bắt buộc",
+    "any.required": "Trường Image là bắt buộc",
   }),
   Product_Description: joi.string().required().empty().messages({
     "string.empty": "Password không được để trống",
@@ -79,12 +84,16 @@ export const Get_one_Product = async (req, res) => {
 };
 export const Put_Product = async (req, res) => {
   try {
+    console.log("A10");
     const { error } = CheckValidate.validate(req.body);
     if (error) {
+      console.log(error);
       return res.json({
-        error: error.details.message,
+        error: error.details[0].message,
       });
     }
+    console.log("A20");
+
     const data = await ProductSchame.findByIdAndUpdate(
       { _id: req.params.id },
       req.body,
