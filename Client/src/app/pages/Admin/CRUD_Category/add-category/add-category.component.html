@@ -1,0 +1,41 @@
+<div class="Product_Wall">
+    <div class="Product_Wall_title">
+            <h1>Add New Category</h1>
+    </div>
+    <div class="Form_add">
+        <form [formGroup]="FormData" (ngSubmit)="HandSubMit()" >
+          <div class="Ball">
+            <div class="Form_add_infomation">
+                <div class="Form_add_title">
+                    <div class="Form_add_title">
+                        <h2>Basic Information</h2>
+                        <p>Section to config basic product information</p>
+                    </div>
+                </div>
+                <div class="Form_Attribute">
+                    <div class="Form_Name">
+                        <div class="Form_Name_title">
+                            <h4>Product Category</h4>
+                        </div>
+                        <div class="Form_Name_Input">
+                            <input type="text" formControlName="Name_Category" name="Name_Category"  placeholder="Category" class="InputName">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Form_add_Image">
+            </div>
+          </div>
+          <div class="Add_Product_Click">
+            <div class="Add_Product_Click_wall">
+                <div class="buttomShow">
+                    <a href="Admin/Show_Category">Show</a>
+                </div>
+                <div class="buttomAdd">
+                    <button type="submit" >Submit</button>
+                </div>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>

@@ -12,6 +12,7 @@ export class AddProductComponent {
   public Editor = ClassicEditor;
   public imageUrl: any;
   // FormData : any;
+  Category : any = [];
   constructor(private Product : ProductService, private form : FormBuilder){
 
   }
@@ -22,12 +23,10 @@ export class AddProductComponent {
     Product_Description : ["", [Validators.required]],
   })
   ngOnInit(){
-    // this.FormData = this.form.group({
-    //   Product_Name : ["", [Validators.required]],
-    //   Product_Price : [0, [Validators.required]],
-    //   Product_KG : [0, [Validators.required]],
-    //   Product_Description : ["", [Validators.required]],
-    // })
+    this.Product.Get_Category().subscribe(data =>{
+       this.Category = data
+       console.log(this.Category);
+    });
   }
   async HandSubMit(){
     console.log("aaaa");
@@ -35,6 +34,7 @@ export class AddProductComponent {
     if (this.FormData.valid) {
     console.log("aaaa");
        const fileInput: any = document.getElementById('fileInput');
+       const Select: any = document.getElementById('Select');
        if (this.FormData.value) {
           const cloud_name = "dsbiugddk";
           const upload_preset = "demo-ECMA";
@@ -53,10 +53,10 @@ export class AddProductComponent {
           Product_Price : this.FormData.value.Product_Price,
           Product_KG : this.FormData.value.Product_KG,
           Product_Image : this.imageUrl,
-          Product_Description : this.FormData.value.Product_Description
+          Product_Description : this.FormData.value.Product_Description,
+          CategoryId : Select.value
         }
         console.log(PostData);
-        
         this.Product.Add_Product(PostData).subscribe((data) => {
           console.log(data);
           alert("Them Thanh cong")
