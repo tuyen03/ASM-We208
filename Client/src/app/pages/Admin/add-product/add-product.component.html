@@ -62,6 +62,11 @@
                         <div class="Form_Image_wall1">
                         <input type="file" id="fileInput" class="file_image">
                         </div>
+                        <div class="Category">
+                            <select name="" class="slect" id="Select">
+                                <option *ngFor="let item of Category.data" class="option" value="{{item._id}}">{{item.Name_Category}}</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>

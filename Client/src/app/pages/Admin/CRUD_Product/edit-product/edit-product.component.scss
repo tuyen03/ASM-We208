@@ -304,3 +304,22 @@ $Color_Title : #111827;
         
     }
 }
+.Category{
+    width: 100%;
+    height: 200px;
+    margin-top: 30px;
+    .slect{
+        width: 150px;
+        height: 30px;
+        background-color: #d7d8db;
+        border-radius: 5px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}        .option{
+    width: 200px;
+    height: 30px;
+    background-color: #d7d8db;
+    border-radius: 5px;
+}
