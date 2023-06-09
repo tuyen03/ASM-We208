@@ -1,0 +1,144 @@
+<div class="main">
+
+    <div class="flex w-[1140px] mx-auto justify-between">
+        <div class="w-[700px]">
+            <div class="flex justify-center p-3">
+                <img class=" w-24 object-cover" src="../../../assets/images/logo-3.png" alt="">
+            </div>
+            <form class="justify-center w-full mx-auto" method="post" action>
+                <div class="">
+                    <div class=" lg:flex lg:space-x-4">
+                        <div class="w-full xl::w-1/2">
+                            <label for="name" class="block mb-3 text-sm font-semibold text-gray-500">Full
+                                name</label>
+                            <input name="name" type="text" placeholder="Full name"
+                                class="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600">
+                        </div>
+                    </div>
+                    <div class="space-x-0 lg:flex lg:space-x-4 mt-4">
+                        <div class="w-full lg:w-1/2 ">
+                            <label for="tel" class="block mb-3 text-sm font-semibold text-gray-500">
+                                Tel</label>
+                            <input name="tel" type="text" placeholder="Phone number"
+                                class="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600">
+                        </div>
+                        <div class="w-full lg:w-1/2">
+                            <label for="date" class="block mb-3 text-sm font-semibold text-gray-500">Date</label>
+                            <input name="date" type="date" placeholder="date" readonly
+                                class="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none ">
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="w-full">
+                            <label for="Address" class="block mb-3 text-sm font-semibold text-gray-500">Address</label>
+                            <textarea
+                                class="w-full px-4 py-3 text-xs border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"
+                                name="Address" cols="20" rows="4" placeholder="Address"></textarea>
+                        </div>
+                    </div>
+                    <div class="space-x-0 lg:flex lg:space-x-4 mt-4">
+                        <div class="mb-3 flex -mx-2">
+                            <div class="px-2 flex justify-center mr-3">
+                                <label for="type1" class="flex items-center cursor-pointer">
+                                    <input type="radio" class="form-radio h-5 w-5 text-indigo-500" name="type"
+                                        id="type1" checked>
+                                    <label class="block ml-3 font-bold" for="">COD</label>
+                                </label>
+                            </div>
+                            <div class="px-2 mr-3">
+                                <label for="type1" class="flex items-center cursor-pointer">
+                                    <input type="radio" class="form-radio h-5 w-5 text-indigo-500" name="type"
+                                        id="type1" checked>
+                                    <img src="https://leadershipmemphis.org/wp-content/uploads/2020/08/780370.png"
+                                        class="h-8 ml-3">
+                                </label>
+                            </div>
+                            <div class="px-2 mr-3">
+                                <label for="type2" class="flex items-center cursor-pointer">
+                                    <input type="radio" class="form-radio h-5 w-5 text-indigo-500" name="type"
+                                        id="type2">
+                                    <img src="https://www.sketchappsources.com/resources/source-image/PayPalCard.png"
+                                        class="h-8 ml-3">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative pt-3 xl:pt-6"><label for="note"
+                            class="block mb-3 text-sm font-semibold text-gray-500"> Notes
+                            (Optional)</label><textarea name="note"
+                            class="flex items-center w-full px-4 py-3 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-600"
+                            rows="4" placeholder="Notes for delivery"></textarea>
+                    </div>
+                    <div class="mt-4">
+                        <button class="w-full px-6 py-2 text-blue-200 bg-blue-600 hover:bg-blue-900">Process</button>
+                    </div>
+                </div>
+            </form>
+            <a href="cart" class="flex font-semibold text-indigo-600 text-sm mt-10">
+
+                <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
+                    <path
+                        d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
+                </svg>
+                Back
+            </a>
+        </div>
+        <div id="" class="w-[384px] px-8 py-10 shadow-lg rounded-lg mt-16 ">
+            <h1 class="font-bold text-2xl border-b pb-8">Shopping Cart</h1>
+            <div class="">
+                <!-- product -->
+                <div class="flex justify-between items-center hover:bg-gray-100  py-5 w-[320px]">
+                    <div class="flex w-3/5 items-center">
+                        <div class="">
+                            <img class="w-10 object-cover rounded-full"
+                                src="https://jthemes.net/themes/html/testo/files/images/menu/burger-04.png" alt="">
+                        </div>
+                        <div class="flex flex-col  ml-4 flex-grow">
+                            <span class="font-bold text-xs">SMOKEY HOUSE</span>
+                            <div class="flex">
+                                <span class=" text-xs text-gray-400 mr-3">$300</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-start w-1/5 font-semibold text-sm">x3</span>
+                    <span class="text-end w-1/5 font-semibold text-sm">$900</span>
+                </div>
+                <div class="flex justify-between items-center hover:bg-gray-100  py-5 w-[320px]">
+                    <div class="flex w-3/5 items-center">
+                        <div class="">
+                            <img class="w-10 object-cover rounded-full"
+                                src="https://jthemes.net/themes/html/testo/files/images/menu/burger-04.png" alt="">
+                        </div>
+                        <div class="flex flex-col  ml-4 flex-grow">
+                            <span class="font-bold text-xs">SMOKEY HOUSE</span>
+                            <div class="flex">
+                                <span class=" text-xs text-gray-400 mr-3">$300</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-start w-1/5 font-semibold text-sm">x3</span>
+                    <span class="text-end w-1/5 font-semibold text-sm">$900</span>
+                </div>
+            </div>
+            <div class="flex border-t pt-3">
+                <input id="User_pasword" type="password" formControlName="User_password"
+                    class="block shadow  border rounded-sm text-sm px-3 text-gray-700 mb-1 h-10  focus:outline-none focus:bg-white  transition duration-500 ease-in-out mr-3"
+                    placeholder="Enter coupon code" />
+                <button
+                    class="w-32 h-10 text-sm transition duration-500 bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    Apply coupon
+                </button>
+
+            </div>
+            <div class="border-t mt-3">
+                <div class="flex font-semibold justify-between py-6 text-sm uppercase">
+                    <span>Total</span>
+                    <span>$600</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

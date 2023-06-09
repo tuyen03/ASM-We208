@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table'  
+import { MatTableModule } from '@angular/material/table'
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,7 @@ import { LayOutAdminComponent } from './layouts/Admin/lay-out-admin/lay-out-admi
 import { DashBoardComponent } from './pages/Admin/dash-board/dash-board.component';
 import { LayoutMenuComponent } from './layouts/layout-menu/layout-menu.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { AddProductComponent } from './pages/Admin/add-product/add-product.component';
 import { ShowProductComponent } from './pages/Admin/CRUD_Product/show-product/show-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,6 +37,7 @@ import { EditProductComponent } from './pages/Admin/CRUD_Product/edit-product/ed
     DashBoardComponent,
     LayoutMenuComponent,
     ProductPageComponent,
+    CheckoutComponent,
     AddProductComponent,
     ShowProductComponent,
     EditProductComponent
