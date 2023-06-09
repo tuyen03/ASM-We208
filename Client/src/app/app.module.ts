@@ -16,6 +16,7 @@ import { LayOutAdminComponent } from './layouts/Admin/lay-out-admin/lay-out-admi
 import { DashBoardComponent } from './pages/Admin/dash-board/dash-board.component';
 import { LayoutMenuComponent } from './layouts/layout-menu/layout-menu.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     LayOutAdminComponent,
     DashBoardComponent,
     LayoutMenuComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
