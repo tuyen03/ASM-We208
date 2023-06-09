@@ -22,5 +22,20 @@ export class ProductService {
   Update_Product(data : any){
     return this.http.put(`http://localhost:8080/api/product/${data._id}`, data);
   }
+  Post_Category(data : any){
+    return this.http.post(`http://localhost:8080/api/category`, data);
+  }
+  Put_Product(data : any){
+    return this.http.put(`http://localhost:8080/api/category/${data._id}`, data);
+  }
+  Get_Category(){
+    return this.http.get(`http://localhost:8080/api/category`);
+  }
+  Get_Category_id({id} : any){
+    return this.http.get(`http://localhost:8080/api/category/` + id);
+  }
+  Delete_Category(id : any){
+    return this.http.delete("http://localhost:8080/api/category/"+id);
+  }
 }
  

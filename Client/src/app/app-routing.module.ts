@@ -7,6 +7,9 @@ import { DashBoardComponent } from './pages/Admin/dash-board/dash-board.componen
 import { AddProductComponent } from './pages/Admin/add-product/add-product.component';
 import { ShowProductComponent } from './pages/Admin/CRUD_Product/show-product/show-product.component';
 import { EditProductComponent } from './pages/Admin/CRUD_Product/edit-product/edit-product.component';
+import { AddCategoryComponent } from './pages/Admin/CRUD_Category/add-category/add-category.component';
+import { ShowCategoryComponent } from './pages/Admin/CRUD_Category/show-category/show-category.component';
+import { EditCategoryComponent } from './pages/Admin/CRUD_Category/edit-category/edit-category.component';
 
 
 const routes: Routes = [
@@ -23,7 +26,11 @@ const routes: Routes = [
             { path: "Add_Product", component: AddProductComponent },
             {path : "Show_Product", component : ShowProductComponent},
             {path : "Edit_Product/:id", component : EditProductComponent},
-
+            //todo CategoriesComponent Start
+            {path : "Category", component : AddCategoryComponent},
+            {path : "Show_Category", component : ShowCategoryComponent},
+            {path : "Edit_Category/:id", component : EditCategoryComponent},
+            //todo CategoriesComponent End
         ]
     }
 ];

@@ -1,5 +1,6 @@
 import joi from "joi";
 import ProductSchame from "../Models/Product";
+import Category_Schame from "../Models/Category";
 
 const CheckValidate = joi.object({
   _id: joi.string(),
@@ -24,6 +25,10 @@ const CheckValidate = joi.object({
     "string.empty": "Password không được để trống",
     "any.required": "Trường password là bắt buộc",
   }),
+  CategoryId: joi.string().empty().messages({
+    "string.empty": "Password không được để trống",
+    "any.required": "Trường password là bắt buộc",
+  }),
 });
 
 export const Create_Product = async (req, res) => {
@@ -36,10 +41,14 @@ export const Create_Product = async (req, res) => {
         error: error.details[0].message,
       });
     }
-    console.log("Thang");
-
     const data = await ProductSchame.create(req.body);
-    console.log(data);
+    console.log("a1");
+    await Category_Schame.findByIdAndUpdate(data.CategoryId, {
+      $addToSet: {
+        Product: data._id,
+      },
+    });
+    console.log("a2");
     return res.json({
       message: "Thêm sản phẩm thành công",
       data: data,

@@ -17,6 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowProductComponent } from './pages/Admin/CRUD_Product/show-product/show-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditProductComponent } from './pages/Admin/CRUD_Product/edit-product/edit-product.component';
+import { AddCategoryComponent } from './pages/Admin/CRUD_Category/add-category/add-category.component';
+import { ShowCategoryComponent } from './pages/Admin/CRUD_Category/show-category/show-category.component';
+import { EditCategoryComponent } from './pages/Admin/CRUD_Category/edit-category/edit-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import { EditProductComponent } from './pages/Admin/CRUD_Product/edit-product/ed
     DashBoardComponent,
     AddProductComponent,
     ShowProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    AddCategoryComponent,
+    ShowCategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,
