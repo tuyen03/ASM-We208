@@ -24,6 +24,28 @@ const CheckValidate = joi.object({
         "string.empty": "Password không được để trống",
         "any.required": "Trường password là bắt buộc",
     }),
+    _id: joi.string(),
+    Product_Name: joi.string().required().empty().messages({
+        "string.required": "Không được để trống",
+        "any.required": "Trường password là bắt buộc",
+        "string.empty": "Name không được để trống",
+    }),
+    Product_Price: joi.number().required().empty().messages({
+        "number.empty": "Number không được để trống",
+        "any.required": "Trường password là bắt buộc",
+    }),
+    Product_KG: joi.number().required().empty().messages({
+        "number.empty": "Number không được để trống",
+        "any.required": "Trường password là bắt buộc",
+    }),
+    Product_Image: joi.string().required().empty().messages({
+        "string.empty": "Password không được để trống",
+        "any.required": "Trường Image là bắt buộc",
+    }),
+    Product_Description: joi.string().required().empty().messages({
+        "string.empty": "Password không được để trống",
+        "any.required": "Trường password là bắt buộc",
+    }),
 });
 
 export const Create_Product = async (req, res) => {
@@ -88,6 +110,32 @@ export const Put_Product = async (req, res) => {
                 error: error.details.message,
             });
         }
+        const data = await ProductSchame.findByIdAndUpdate(
+            { _id: req.params.id },
+            req.body,
+            { new: true }
+        );
+        return res.json({
+            message: "Cập nhật dữ liệu thành công",
+            data: data,
+        });
+    } catch (error) {
+        return res.status(404).json({
+            message: "Lỗi Khi lấy dữ liệu",
+            error: error.message,
+        });
+    }
+    try {
+        console.log("A10");
+        const { error } = CheckValidate.validate(req.body);
+        if (error) {
+            console.log(error);
+            return res.json({
+                error: error.details[0].message,
+            });
+        }
+        console.log("A20");
+
         const data = await ProductSchame.findByIdAndUpdate(
             { _id: req.params.id },
             req.body,

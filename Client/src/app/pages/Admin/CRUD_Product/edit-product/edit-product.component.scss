@@ -1,0 +1,306 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+$Color_Text : #6B7280;
+$Color_Title : #111827;
+.Product_Wall{
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    .Product_Wall_title{
+    width: 100%;
+    height: 10%;    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    h1{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    }
+    .Form_add{
+        width: 100%;
+        height: 90%;
+        form{
+            width: 100%;
+            height: 100%;
+        }
+        .Form_add_infomation{
+            width: 60%;
+            height: 100%;
+            .Form_add_title{
+                width: 100%;
+                height: 10%;
+                h2{
+                    color: $Color_Title;
+                }
+                p{
+                    color: $Color_Text;
+                    margin-top: 5px;
+                }
+            }
+            .Form_Attribute{
+                width: 100%;
+                height: 90%;
+                .Form_Name{
+                    width: 100%;
+                    height: 12%;    
+                    .Form_Name_title{
+                        width: 100%;
+                        height: 30%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        h4{
+                            color: $Color_Text;
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+                    }
+                    .Form_Name_Input{
+                        width: 100%;
+                        height: 70%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        .InputName{
+                            width: 100%;
+                            height: 75%;
+                            border-radius: 5px;
+                            border: 1px solid $Color_Text;
+                            &::placeholder{
+                                padding-left: 10px;
+                            }
+                            &:focus{
+                                border: 1px solid #4F46E5 !important;
+
+                            }
+                        }
+                    }
+                }
+                .Form_Price{
+                    width: 100%;
+                    height: 12%;   
+                    margin-top: 3%; 
+                    .Form_Price_title{
+                        width: 100%;
+                        height: 30%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        h4{
+                            color: $Color_Text;
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+                    }
+                    .Form_Price_Input{
+                        width: 100%;
+                        height: 70%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        .InputPrice{
+                            width: 100%;
+                            height: 75%;
+                            border-radius: 5px;
+                            border: 1px solid $Color_Text;
+                            &::placeholder{
+                                padding-left: 10px;
+                            }
+                            &:focus{
+                                border: 1px solid #4F46E5 !important;
+
+                            }
+                        }
+                    }
+                }
+                .Form_kg{
+                    width: 100%;
+                    height: 12%;   
+                    margin-top: 3%; 
+                    .Form_kg_title{
+                        width: 100%;
+                        height: 30%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        h4{
+                            color: $Color_Text;
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+                    }
+                    .Form_kg_Input{
+                        width: 100%;
+                        height: 70%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        .InputKg{
+                            width: 100%;
+                            height: 75%;
+                            border-radius: 5px;
+                            border: 1px solid $Color_Text;
+                            &::placeholder{
+                                padding-left: 10px;
+                            }
+                            &:focus{
+                                border: 1px solid #4F46E5 !important;
+
+                            }
+                        }
+                    }
+                }
+                .Form_Desctiption{
+                    width: 100%;
+                    height: 48%;   
+                    margin-top: 5%; 
+                    .Form_Desctiption_title{
+                        width: 100%;
+                        height: 20%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        h4{
+                            color: $Color_Text;
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+                    }
+                    .Form_Desctiption_Input{
+                        width: 100%;
+                        height: 80%;
+                        .Cke{
+                            width: 90%;
+                            height: 80%;
+                        }
+
+                    }
+                }
+            }
+        }
+        .Form_add_Image{
+            width: 40%;
+            height: 100%;
+            .Form_add_Image_title{
+                width: 100%;
+                height: 10%;
+                h2{
+                    color: $Color_Title;
+                    margin-left: 25px;
+                }
+                p{
+                    color: $Color_Text;
+                    margin-top: 5px;
+                    margin-left: 25px;
+                }
+            }
+            .Form_Image{
+                width: 100%;
+                height: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .Form_Image_wall{
+                    width: 90%;
+                    height: 90%;
+                    p{
+                        font-size: 0.6rem;
+                    }
+                    .Form_Image_wall1{
+                        width: 100%;
+                        height: 60%;
+                        align-items: center;
+                        border-radius: 0.5rem;
+                        border-style: dashed;
+                        border-width: 2px;
+                        color: #D1D5DB;
+                        cursor: pointer;
+                        display: flex;
+                        justify-content: center;
+                        min-height: 7rem;
+                        position: relative;
+                        .file_image{
+                            cursor: pointer;
+                            display: block;
+                            opacity: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .Posion_Image{
+                        width: 20%;
+                        height: 10%;
+                        position: absolute;
+                        margin-left: 100px;
+                        margin-top: 120px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        img{
+                            width: 30%;
+                            height: 100%;
+                        }
+                        .blue{
+                            color: #4D84F6;
+                        }
+                        .title_img{
+                            color: #6B7280;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.Ball{
+    width: 100%;
+    height: 90%;
+    display: flex;
+}
+.Add_Product_Click{
+    width: 100%;
+    height: 10%;
+    border-top: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .Add_Product_Click_wall{
+        width: 15%;
+        height: 100%;
+        display: flex;
+        .buttomShow{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a{
+                padding: 5px 13px ;
+                border: 1px solid $Color_Text;
+                border-radius: 5px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                &:hover{
+                    background-color: #fafcfc;
+                }
+            }
+        }
+        .buttomAdd{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button{
+                background-color: #4F46E5;
+                color: white;
+                width: 70px;
+                height: 36px;
+                border-radius: 5px;
+                &:hover{
+                opacity: 0.9;
+                }
+            }
+        }
+        
+    }
+}

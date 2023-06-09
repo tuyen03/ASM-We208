@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table'
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +21,10 @@ import { DashBoardComponent } from './pages/Admin/dash-board/dash-board.componen
 import { LayoutMenuComponent } from './layouts/layout-menu/layout-menu.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { AddProductComponent } from './pages/Admin/add-product/add-product.component';
+import { ShowProductComponent } from './pages/Admin/CRUD_Product/show-product/show-product.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditProductComponent } from './pages/Admin/CRUD_Product/edit-product/edit-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,14 +37,24 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     DashBoardComponent,
     LayoutMenuComponent,
     ProductPageComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    AddProductComponent,
+    ShowProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CKEditorModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
