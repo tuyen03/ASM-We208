@@ -2,6 +2,7 @@ import joi from "joi";
 import Category_Schame from "../Models/Category";
 
 const CheckValidate = joi.object({
+  _id: joi.string(),
   Name_Category: joi.string().required().empty().messages({
     "string.empty": "Xin vui long nhap lai",
     "string.required": "Trường này bắt buộc nhập",
@@ -51,7 +52,9 @@ export const Get_All_Category = async (req, res) => {
 };
 export const Get_One_Category = async (req, res) => {
   try {
-    const data = await Category_Schame.findById(req.params.id);
+    const data = await Category_Schame.findById(req.params.id).populate(
+      "Product"
+    );
     if (data) {
       return res.json({
         message: "Lấy dữ liệu thành công",

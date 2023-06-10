@@ -15,15 +15,18 @@ export class EditProductComponent {
   public imageUrl: any;
   // FormData : any;
   Product_id : any = {};
+  Category : any = [];
   constructor(private Product : ProductService, private form : FormBuilder, private Get_id : ActivatedRoute, private Router : Router){
     this.Get_id.params.subscribe(params =>{
       this.Product.Get_Product_Id(params).subscribe(data =>{
         this.Product_id = data;
+        console.log(this.Product_id);
         this.FormData.patchValue({
           Product_Name : this.Product_id.data.Product_Name,
           Product_Price : this.Product_id.data.Product_Price,
           Product_KG : this.Product_id.data.Product_KG,
           Product_Description : this.Product_id.data.Product_Description,
+          CategoryId : this.Product_id.data.CategoryId
         })
       })
     })
@@ -33,9 +36,13 @@ export class EditProductComponent {
     Product_Price : [0, [Validators.required]],
     Product_KG : [0, [Validators.required]],
     Product_Description : ["", [Validators.required]],
+    CategoryId : ["", Validators.required],
   })
   ngOnInit(){
-
+    this.Product.Get_Category().subscribe(data =>{
+       this.Category = data
+       console.log(this.Category);
+    });
   }
   async HandSubMit(){
     if (this.FormData.valid) {
@@ -59,10 +66,10 @@ export class EditProductComponent {
           Product_Price : this.FormData.value.Product_Price,
           Product_KG : this.FormData.value.Product_KG,
           Product_Image : this.imageUrl,
-          Product_Description : this.FormData.value.Product_Description
+          Product_Description : this.FormData.value.Product_Description,
+          CategoryId : this.FormData.value.CategoryId,
         }
         console.log(PostData);
-        
         this.Product.Update_Product(PostData).subscribe((data) => {
           alert("Cập Nhật dữ liệu thành công");
           // this.Router.navigateByUrl("Admin/Show_Product");

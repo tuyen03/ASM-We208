@@ -1,0 +1,179 @@
+<div class="">
+    <header class="w-full ">
+        <div class="relative ">
+            <img class=" w-full h-[420px] object-cover" src="../../../assets/images/cart-page.jpg" alt="">
+        </div>
+        <div class=" w-[1140px] mx-auto text-center">
+            <div class="absolute w-[1140px] top-0 mt-6">
+                <div class=" flex items-center justify-between">
+                    <div class="">
+                        <img src="../../../assets/images/logo-3.png" alt="logo">
+                    </div>
+                    <div class="">
+                        <ul class="flex items-center">
+                            <li class="">
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">ABOUT</a>
+                            </li>
+                            <li class="">
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">OUR
+                                    MENU</a>
+                            </li>
+                            <li class="">
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">SHOP</a>
+                            </li>
+                            <li class="">
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">BLOG</a>
+                            </li>
+                            <li class="">
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">HOURS &
+                                    LOCATIONS</a>
+                            </li>
+                            <li class="">
+                                <span class="text-[#F7BE27] px-3 text-[28px] font-bold">789-654-3210</span>
+                            </li>
+                            <li class="">
+                                <a href="">
+                                    <div class="relative">
+                                        <svg width="64px" height="64px" viewBox="-12.96 -12.96 49.92 49.92" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke="#CCCCCC" stroke-width="0.048"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M8 11.01V11M16 11.01V11M8 8V7C8 5.93913 8.42143 4.92172 9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.5786 4.92172 16 5.93913 16 7V8M8 8H6.84027C5.80009 8 4.93356 8.79732 4.84718 9.83391L4.18051 17.8339C4.08334 18.9999 5.00352 20 6.1736 20H17.8264C18.9965 20 19.9167 18.9999 19.8195 17.8339L19.1528 9.83391C19.0664 8.79732 18.1999 8 17.1597 8H16M8 8H16"
+                                                    stroke="#ffffff" stroke-width="0.9" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="absolute top-[10px] right-4 items-center">
+                                        <i class="fa-solid fa-circle fa-sm text-lg relative"
+                                            style="color: #ff0000;"></i>
+                                        <span class=" w-full text-white absolute text-xs top-[5.5px] left-0">
+                                            1
+                                        </span>
+                                    </div>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-white text-[65px] uppercase font-bold my-20 ">
+                    SHOPING CART
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="">
+        <div class="w-[1140px] mx-auto mt-10">
+            <div class="flex my-10">
+                <div class="w-3/4 bg-white px-10 py-10 ">
+                    <div class="flex mt-10 mb-5">
+                        <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product</h3>
+                        <h3 class="font-semibold  text-gray-600 text-xs uppercase w-1/5 text-center">Quantity</h3>
+                        <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5 text-center">Price</h3>
+                        <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
+                        <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5 text-center"></h3>
+
+                    </div>
+                    <!-- products -->
+                    <div class="" *ngFor="let item of cartData">
+                        <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                            <div class="flex w-2/5 items-center">
+                                <div class="">
+                                    <img class="w-20 object-cover rounded-full" src="{{item.image}}" alt="">
+                                </div>
+                                <div class="flex flex-col  ml-4 flex-grow">
+                                    <span class="font-bold text-lg">{{item.name}}</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-center w-1/5">
+                                <input type="number" name="" id="" value="{{item.quantity}}"
+                                    class="border-2 border-gray-200 appearance-none rounded-[4px] w-20 h-10 pl-2 outline-none focus:border-gray-400 mr-3"
+                                    (blur)="updateQuantity($event,item.id)">
+
+                            </div>
+                            <span class="text-center w-1/5 font-semibold text-sm">${{item.price}}</span>
+                            <span class="text-center w-1/5 font-semibold text-sm">${{item.price * item.quantity}}</span>
+                            <span class="text-center w-1/5 font-semibold text-sm">
+                                <i class="fa-regular fa-trash-can fa-lg" style="color: #b0b0b0;"
+                                    (click)="removeCartItem(item.id)"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10">
+
+                        <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
+                            <path
+                                d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
+                        </svg>
+                        Continue Shopping
+                    </a>
+
+                    <button class="border" (click)="logout()">Logout </button>
+                </div>
+
+                <div id="summary" class="w-1/4 px-8 py-10 shadow-lg rounded-lg">
+                    <h1 class="font-semibold text-2xl border-b pb-8">Summary</h1>
+                    <div class="flex justify-between mt-10 mb-5">
+                        <span class="font-semibold text-sm uppercase">Subtotal</span>
+                        <span class="font-semibold text-sm">{{totalAmount}}</span>
+                    </div>
+                    <div class="flex justify-between mt-10 mb-5">
+                        <span class="font-semibold text-sm uppercase">Shipping</span>
+                        <span class="font-semibold text-sm">Free</span>
+                    </div>
+                    <div class="border-t mt-8">
+                        <div class="flex font-semibold justify-between py-6 text-sm uppercase">
+                            <span>Total cost</span>
+                            <span>{{totalAmount}}</span>
+                        </div>
+                        <a href="checkout">
+                            <button
+                                class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full ">Checkout</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="relative ">
+            <img class=" w-full h-[486px] object-cover" src="../../../assets/images/Section-Cart.png" alt="">
+        </div>
+    </main>
+    <footer class="w-[1140px] mx-auto py-20">
+        <div class="flex justify-between">
+            <div class="">
+                <img src="../../../assets/images/logo-3.png" alt="">
+                <span>
+                    © 2020 Testo. All Rights Reserved
+                </span>
+            </div>
+            <div class="font-semibold">
+                <span class="block">
+                    Los Angeles,
+                </span>
+                <span class="block">
+                    8721 M Central Avenue, CA 90036
+                </span>
+                <span class="block">
+                    Email: hello@yourdomain.com
+                </span>
+                <span class="block">
+                    Call Now: <p class="text-[#F7BE27] px-3 text-[20px] font-bold">789-654-3210</p>
+                </span>
+            </div>
+            <div class="grid grid-cols-3 gap-1">
+                <img src="../../../assets/images/Album1.png" alt="">
+                <img src="../../../assets/images/Album2.png" alt="">
+                <img src="../../../assets/images/Album3.png" alt="">
+                <img src="../../../assets/images/Album4.png" alt="">
+                <img src="../../../assets/images/Album5.png" alt="">
+                <img src="../../../assets/images/Album6.png" alt="">
+            </div>
+        </div>
+    </footer>
+</div>

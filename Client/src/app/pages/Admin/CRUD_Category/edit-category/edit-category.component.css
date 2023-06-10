@@ -1,0 +1,329 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.Product_Wall {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+}
+.Product_Wall .Product_Wall_title {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Product_Wall .Product_Wall_title h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Product_Wall .Form_add {
+  width: 100%;
+  height: 90%;
+}
+.Product_Wall .Form_add form {
+  width: 100%;
+  height: 100%;
+}
+.Product_Wall .Form_add .Form_add_infomation {
+  width: 60%;
+  height: 100%;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_add_title {
+  width: 100%;
+  height: 10%;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_add_title h2 {
+  color: #111827;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_add_title p {
+  color: #6B7280;
+  margin-top: 5px;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute {
+  width: 100%;
+  height: 90%;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Name {
+  width: 100%;
+  height: 12%;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Name .Form_Name_title {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Name .Form_Name_title h4 {
+  color: #6B7280;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Name .Form_Name_Input {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Name .Form_Name_Input .InputName {
+  width: 100%;
+  height: 75%;
+  border-radius: 5px;
+  border: 1px solid #6B7280;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Name .Form_Name_Input .InputName::-moz-placeholder {
+  padding-left: 10px;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Name .Form_Name_Input .InputName::placeholder {
+  padding-left: 10px;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Name .Form_Name_Input .InputName:focus {
+  border: 1px solid #4F46E5 !important;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Price {
+  width: 100%;
+  height: 12%;
+  margin-top: 3%;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Price .Form_Price_title {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Price .Form_Price_title h4 {
+  color: #6B7280;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Price .Form_Price_Input {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Price .Form_Price_Input .InputPrice {
+  width: 100%;
+  height: 75%;
+  border-radius: 5px;
+  border: 1px solid #6B7280;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Price .Form_Price_Input .InputPrice::-moz-placeholder {
+  padding-left: 10px;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Price .Form_Price_Input .InputPrice::placeholder {
+  padding-left: 10px;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Price .Form_Price_Input .InputPrice:focus {
+  border: 1px solid #4F46E5 !important;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_kg {
+  width: 100%;
+  height: 12%;
+  margin-top: 3%;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_kg .Form_kg_title {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_kg .Form_kg_title h4 {
+  color: #6B7280;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_kg .Form_kg_Input {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_kg .Form_kg_Input .InputKg {
+  width: 100%;
+  height: 75%;
+  border-radius: 5px;
+  border: 1px solid #6B7280;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_kg .Form_kg_Input .InputKg::-moz-placeholder {
+  padding-left: 10px;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_kg .Form_kg_Input .InputKg::placeholder {
+  padding-left: 10px;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_kg .Form_kg_Input .InputKg:focus {
+  border: 1px solid #4F46E5 !important;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Desctiption {
+  width: 100%;
+  height: 48%;
+  margin-top: 5%;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Desctiption .Form_Desctiption_title {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Desctiption .Form_Desctiption_title h4 {
+  color: #6B7280;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Desctiption .Form_Desctiption_Input {
+  width: 100%;
+  height: 80%;
+}
+.Product_Wall .Form_add .Form_add_infomation .Form_Attribute .Form_Desctiption .Form_Desctiption_Input .Cke {
+  width: 90%;
+  height: 80%;
+}
+.Product_Wall .Form_add .Form_add_Image {
+  width: 40%;
+  height: 100%;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_add_Image_title {
+  width: 100%;
+  height: 10%;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_add_Image_title h2 {
+  color: #111827;
+  margin-left: 25px;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_add_Image_title p {
+  color: #6B7280;
+  margin-top: 5px;
+  margin-left: 25px;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_Image {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_Image .Form_Image_wall {
+  width: 90%;
+  height: 90%;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_Image .Form_Image_wall .Form_Image_wall1 {
+  width: 100%;
+  height: 60%;
+  align-items: center;
+  border-radius: 0.5rem;
+  border-style: dashed;
+  border-width: 2px;
+  color: #D1D5DB;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  min-height: 7rem;
+  position: relative;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_Image .Form_Image_wall .Form_Image_wall1 .file_image {
+  cursor: pointer;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_Image .Form_Image_wall .Posion_Image {
+  width: 20%;
+  height: 10%;
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_Image .Form_Image_wall .Posion_Image img {
+  width: 30%;
+  height: 100%;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_Image .Form_Image_wall .Posion_Image .blue {
+  color: #4D84F6;
+}
+.Product_Wall .Form_add .Form_add_Image .Form_Image .Form_Image_wall .Posion_Image .title_img {
+  color: #6B7280;
+}
+
+.Ball {
+  width: 100%;
+  height: 90%;
+  display: flex;
+}
+
+.Add_Product_Click {
+  width: 100%;
+  height: 10%;
+  border-top: 1px solid #E5E7EB;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.Add_Product_Click .Add_Product_Click_wall {
+  width: 15%;
+  height: 100%;
+  display: flex;
+}
+.Add_Product_Click .Add_Product_Click_wall .buttomShow {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Add_Product_Click .Add_Product_Click_wall .buttomShow a {
+  padding: 5px 13px;
+  border: 1px solid #6B7280;
+  border-radius: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.Add_Product_Click .Add_Product_Click_wall .buttomShow a:hover {
+  background-color: #fafcfc;
+}
+.Add_Product_Click .Add_Product_Click_wall .buttomAdd {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Add_Product_Click .Add_Product_Click_wall .buttomAdd button {
+  background-color: #4F46E5;
+  color: white;
+  width: 70px;
+  height: 36px;
+  border-radius: 5px;
+}
+.Add_Product_Click .Add_Product_Click_wall .buttomAdd button:hover {
+  opacity: 0.9;
+}
+
+.Category {
+  width: 100%;
+  height: 200px;
+  margin-top: 30px;
+}
+.Category .slect {
+  width: 150px;
+  height: 30px;
+  background-color: #d7d8db;
+  border-radius: 5px;
+}
+.Category .slect:hover {
+  cursor: pointer;
+}
+
+.option {
+  width: 200px;
+  height: 30px;
+  background-color: #d7d8db;
+  border-radius: 5px;
+}/*# sourceMappingURL=edit-category.component.css.map */

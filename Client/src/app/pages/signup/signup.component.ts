@@ -31,7 +31,7 @@ export class SignupComponent {
       .subscribe(
         (response) => {
           console.log(response);
-          const confirm = window.confirm('Đăng kí thành công! Đăng nhập ngay')
+          const confirm = window.confirm('Registration Successful! Login Now!')
           if (confirm) {
             this.router.navigate(['signin'])
           }

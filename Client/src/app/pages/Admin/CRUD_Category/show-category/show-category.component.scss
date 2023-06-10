@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+$Color_Text : #6B7280;
+$Color_Title : #111827;
+.Product_Wall{
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    .Product_Wall_title{
+    width: 100%;
+    height: 10%;    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    h1{
+        font-size: 2rem;
+        font-weight: 4  00;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+    }
+    .Product_list_wall{
+        width: 100%;
+        height: 90%;
+        table {
+            width: 100%;
+            align-items: center;
+          }
+    }
+}
+.Edit{
+    &:hover{
+        i{
+            color: #5C4ED9;
+        }
+    }
+    i{
+        font-size: 1.2rem;
+    }
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    &:hover{
+        color: red;
+    }
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.event{
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
