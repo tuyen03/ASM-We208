@@ -32,7 +32,7 @@ export class AddProductComponent {
     console.log("aaaa");
     
     if (this.FormData.valid) {
-    console.log("aaaa");
+         console.log("aaaa");
        const fileInput: any = document.getElementById('fileInput');
        const Select: any = document.getElementById('Select');
        if (this.FormData.value) {
@@ -60,7 +60,7 @@ export class AddProductComponent {
         this.Product.Add_Product(PostData).subscribe((data) => {
           console.log(data);
           alert("Them Thanh cong")
-        })
+        });
       }
     }
   }

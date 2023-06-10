@@ -10,21 +10,25 @@ import { ProductService } from 'src/app/Service/product.service';
 })
 export class ShowProductComponent implements AfterViewInit {
   product : any = []
+  dataSource : any;
   constructor(private Data : ProductService){
     this.Data.Get_Product().subscribe(data => {
       this.product  = data;
+      this.dataSource = new MatTableDataSource<PeriodicElement>(this.product.data);
+      this.dataSource.paginator = this.paginator;
     })
   }
   displayedColumns: string[] = ['Product_Name', 'Product_Price', 'Product_KG', 'Product_Image', "Product_Description", '_id',];
-  dataSource = new MatTableDataSource<PeriodicElement>(this.product);
-  
-  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+  ngOnInit(){
+    console.log(this.dataSource);
+  }
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
   // @ViewChild(MatPaginator)
   // paginator!: MatPaginator;
 
   ngAfterViewInit() {
-    this.product.paginator = this.paginator;
-    console.log(this.dataSource.data);
+    // this.dataSource.paginator = this.paginator;
   }
   Delete(id : any){
     this.Data.Delete_Product(id).subscribe(data =>{
