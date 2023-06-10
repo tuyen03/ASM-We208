@@ -8,31 +8,39 @@
           
               <!-- Position Column -->
               <!-- Name Column -->
-              <ng-container matColumnDef="Product_Name">
+              <ng-container matColumnDef="address">
                 <th mat-header-cell *matHeaderCellDef> Product_Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.Product_Name}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.address}} </td>
               </ng-container>
           
               <!-- Weight Column -->
-              <ng-container matColumnDef="Product_Price">
+              <ng-container matColumnDef="tel">
                 <th mat-header-cell *matHeaderCellDef> Product_Price </th>
-                <td mat-cell *matCellDef="let element"> {{element.Product_Price}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
               </ng-container>
 
-              <ng-container matColumnDef="Product_KG">
+              <ng-container matColumnDef="user_id">
                 <th mat-header-cell *matHeaderCellDef> Product_KG </th>
-                <td mat-cell *matCellDef="let element"> {{element.Product_KG}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.user_id}} </td>
               </ng-container>
           
               <!-- Symbol Column -->
-              <ng-container matColumnDef="Product_Image">
+              <ng-container matColumnDef="product_list">
                 <th mat-header-cell *matHeaderCellDef> Product_Image </th>
-                <td mat-cell *matCellDef="let element"> <img src="{{element.Product_Image}}" alt=""> </td>
+                <td mat-cell *matCellDef="let element"> {{element.product_list.length}} </td>
               </ng-container>
 
-              <ng-container matColumnDef="Product_Description">
+              <ng-container matColumnDef="payment_method">
                 <th mat-header-cell *matHeaderCellDef> Product_Description </th>
-                <td mat-cell *matCellDef="let element"> {{element.Product_Description}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.payment_method}} </td>
+              </ng-container>
+              <ng-container matColumnDef="total">
+                <th mat-header-cell *matHeaderCellDef> Product_Description </th>
+                <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+              </ng-container>
+              <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Product_Description </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
               </ng-container>
               <ng-container matColumnDef="_id" >
                 <th mat-header-cell *matHeaderCellDef> Delete </th>

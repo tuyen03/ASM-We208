@@ -28,6 +28,7 @@ import { EditProductComponent } from './pages/Admin/CRUD_Product/edit-product/ed
 import { AddCategoryComponent } from './pages/Admin/CRUD_Category/add-category/add-category.component';
 import { ShowCategoryComponent } from './pages/Admin/CRUD_Category/show-category/show-category.component';
 import { EditCategoryComponent } from './pages/Admin/CRUD_Category/edit-category/edit-category.component';
+import { ShowOrderComponent } from './pages/Admin/Order/show-order/show-order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { EditCategoryComponent } from './pages/Admin/CRUD_Category/edit-category
     EditProductComponent,
     AddCategoryComponent,
     ShowCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    ShowOrderComponent
   ],
   imports: [
     BrowserModule,
