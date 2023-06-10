@@ -17,7 +17,7 @@ export const orderSchema = joi.object({
         "any.required": "user_id is required.",
         "string.empty": "Please enter a Full Name."
     }),
-    product_list: joi.string().required().messages({
+    product_list: joi.required().messages({
         "any.required": "product_list is required.",
         "string.empty": "Please enter a Full Name."
     }),

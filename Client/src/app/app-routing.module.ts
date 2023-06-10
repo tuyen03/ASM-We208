@@ -5,10 +5,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { HomePageComponent } from './pages/home-page/home-page/home-page.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-import { LayOutAdminComponent } from './layouts/Admin/lay-out-admin/lay-out-admin.component';
-import { DashBoardComponent } from './pages/Admin/dash-board/dash-board.component';
-import { LayoutMenuComponent } from './layouts/layout-menu/layout-menu.component';
-import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { AddProductComponent } from './pages/Admin/add-product/add-product.component';
 import { ShowProductComponent } from './pages/Admin/CRUD_Product/show-product/show-product.component';
@@ -18,6 +15,11 @@ import { ShowCategoryComponent } from './pages/Admin/CRUD_Category/show-category
 import { EditCategoryComponent } from './pages/Admin/CRUD_Category/edit-category/edit-category.component';
 import { ShowOrderComponent } from './pages/Admin/Order/show-order/show-order.component';
 
+import { MyOrderComponent } from './pages/my-order/my-order.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { LayoutMenuComponent } from './layouts/layout-menu/layout-menu.component';
+import { DashBoardComponent } from './pages/Admin/dash-board/dash-board.component';
+import { LayOutAdminComponent } from './layouts/Admin/lay-out-admin/lay-out-admin.component';
 
 const routes: Routes = [
     {
@@ -57,7 +59,10 @@ const routes: Routes = [
         path: "product", component: LayoutMenuComponent, children: [
             { path: "", component: ProductPageComponent }
         ]
-    }
+    },
+    { path: 'cart', component: ShoppingCartComponent },
+    { path: 'checkout', component: CheckoutComponent },
+    { path: 'my-order', component: MyOrderComponent },
 ];
 
 @NgModule({

@@ -1,10 +1,10 @@
-<div class="container">
-    <header class="w-full">
+<div class="">
+    <header class="w-full ">
         <div class="relative ">
-            <img class="object-contain w-full" src="../../../assets/images/Banner3.png" alt="">
+            <img class=" w-full h-[420px] object-cover" src="../../../assets/images/Banner3.png" alt="">
         </div>
         <div class=" w-[1140px] mx-auto text-center">
-            <div class="absolute w-[1140px] top-0">
+            <div class="absolute w-[1140px] top-0 mt-6">
                 <div class=" flex items-center justify-between">
                     <div class="">
                         <img src="../../../assets/images/logo-3.png" alt="logo">
@@ -12,24 +12,24 @@
                     <div class="">
                         <ul class="flex items-center">
                             <li class="">
-                                <a class="text-white px-3 text-sm font-semibold hover:text-[#F7BE27]" href="">ABOUT</a>
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">ABOUT</a>
                             </li>
                             <li class="">
-                                <a class="text-white px-3 text-sm font-semibold hover:text-[#F7BE27]" href="">OUR
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">OUR
                                     MENU</a>
                             </li>
                             <li class="">
-                                <a class="text-white px-3 text-sm font-semibold hover:text-[#F7BE27]" href="">SHOP</a>
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">SHOP</a>
                             </li>
                             <li class="">
-                                <a class="text-white px-3 text-sm font-semibold hover:text-[#F7BE27]" href="">BLOG</a>
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">BLOG</a>
                             </li>
                             <li class="">
-                                <a class="text-white px-3 text-sm font-semibold hover:text-[#F7BE27]" href="">HOURS &
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">HOURS &
                                     LOCATIONS</a>
                             </li>
                             <li class="">
-                                <span class="text-[#F7BE27] px-3 text-[24px] font-bold">789-654-3210</span>
+                                <span class="text-[#F7BE27] px-3 text-[28px] font-bold">789-654-3210</span>
                             </li>
                             <li class="">
                                 <a href="">
@@ -60,8 +60,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="text-white text-[42px] uppercase font-bold my-12 ">
-                    Smokey House
+                <div class="text-white text-[65px] uppercase font-bold my-20 ">
+                    {{ product.name }}
                 </div>
             </div>
         </div>
@@ -70,11 +70,11 @@
         <div class="w-[1140px] mx-auto">
             <div class="flex justify-between mt-12">
                 <div class="">
-                    <img class="w-[550px] h-[450px] object-cover" src="../../../assets/images/burger-01.png.png" alt="">
+                    <img class="w-[550px] h-[450px] object-cover" src="{{ product.image }}" alt="">
                 </div>
                 <div class="w-[450px]">
                     <div class="text-[34px] font-bold uppercase">
-                        Smokey House
+                        {{ product.name }}
                     </div>
                     <div class="flex items-center">
                         <i class="fa-solid fa-star fa-sm mr-1" style="color: #F7BE27;"></i>
@@ -82,17 +82,15 @@
                         <i class="fa-solid fa-star fa-sm mr-1" style="color: #F7BE27;"></i>
                         <i class="fa-solid fa-star fa-sm mr-1" style="color: #F7BE27;"></i>
                         <i class="fa-solid fa-star fa-sm mr-1" style="color: #F7BE27;"></i>
-
-
-
                         <span class="text-[14px]">
                             (3 Customer Reviews)
                         </span>
                     </div>
 
                     <div class="my-2">
-                        <span class="text-[28px] text-[#BABBBC] font-bold mr-2 line-through">$1000</span>
-                        <span class="text-[28px] text-[#F7BE27] font-bold mr-2">$900</span>
+                        <!-- <span class="text-[28px] text-[#BABBBC] font-bold mr-2 line-through">{{ product.price
+                            }}$</span> -->
+                        <span class="text-[28px] text-[#F7BE27] font-bold mr-2">${{ product.price }}</span>
                     </div>
                     <div class="text-gray-500">
                         Integer congue magna at pretium purus pretium ligula
@@ -102,15 +100,15 @@
                     <div class="my-2">
                         <div class="flex justify-between border-b-2 border-gray-500 border-dotted py-3">
                             <span class="text-[16px] font-bold">Portion Size:</span>
-                            <span class="text-[16px] pr-3">39g</span>
+                            <span class="text-[16px] pr-3">{{ product.size }}g</span>
                         </div>
                         <div class="flex justify-between border-b-2 border-gray-500 border-dotted py-3">
-                            <span class="text-[16px] font-bold">Calories::</span>
-                            <span class="text-[16px] pr-3">390Kj</span>
+                            <span class="text-[16px] font-bold">Calories:</span>
+                            <span class="text-[16px] pr-3">{{ product.calo }}Kj</span>
                         </div>
                     </div>
-                    <form action="" class="my-5">
-                        <input type="number" name="" id=""
+                    <form class="my-5" (submit)="addToCart(product._id)">
+                        <input type="number" name="quantity" id="" [(ngModel)]="quantity"
                             class="border-2 border-gray-200 appearance-none rounded-[4px] w-20 h-10 pl-2 outline-none focus:border-gray-400 mr-3">
                         <button type="submit" class="w-[180px] h-10 rounded-[4px] bg-[#F7BE27] font-semibold">
                             Add to Cart</button>
@@ -137,34 +135,7 @@
                 </div>
             </div>
             <div class="">
-                <span class="block">
-                    Donec sodales, nibh vel tristique aliquet, nisi libero suscipit diam, sed tempus ante nulla ut
-                    purus. Donec dolor magna aliquet suscipit in
-                    magna dignissim, porttitor hendrerit. Nunc gravida ultrices a felis eget faucibus. Praesent lorem
-                    purus, quis mollis nisi laoreet vitae
-                    consequat tortor
-                </span> <br>
-                <span class="block">
-                    Quaerat sodales sapien undo euismod purus blandit velna vitae auctor a congue magna tempor sapien
-                    eget gravida laoreet turpis urna
-                    augue, viverra a augue eget, dictum tempor diam pulvinar consectetur purus efficitur ipsum primis in
-                    cubilia laoreet augue donec
-                </span> <br>
-                <span class="block">
-                    Nemo ipsam egestas volute turpis dolores ut aliquam quaerat sodales sapien congue augue egestas
-                    volutpat egestas magna suscipit
-                    egestas magna ipsum vitae purus efficitur ipsum primis in cubilia undo pretium a purus pretium
-                    ligula
-                </span> <br>
-                <span class="block">
-                    Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue
-                    magna nihil impedit ligula risus.
-                    Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta
-                    justo integer odio velna a purus
-                    efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales
-                    mpedit ligula risus. Mauris donec ociis et
-                    magnis sapien
-                </span> <br>
+                {{ product.description }}
             </div>
         </div>
         <div class="bg-slate-50 pt-10 pb-24">
