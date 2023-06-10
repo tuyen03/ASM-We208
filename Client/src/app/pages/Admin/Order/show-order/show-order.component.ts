@@ -11,11 +11,11 @@ import { ProductService } from 'src/app/Service/product.service';
 export class ShowOrderComponent {
   product : any = []
   ELEMENT_DATA: PeriodicElement[] = [
-    {_id: 1, address: 'Hydrogen', tel: '1.0079', user_id: 'H', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", date : "2014"},
-    {_id: 2, address: 'Hydrogen', tel: '1.0079', user_id: 'T', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", date : "2014"},
-    {_id: 3, address: 'Hydrogen', tel: '1.0079', user_id: 'U', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", date : "2014"},
-    {_id: 4, address: 'Hydrogen', tel: '1.0079', user_id: 'I', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", date : "2014"},
-    {_id: 5, address: 'Hydrogen', tel: '1.0079', user_id: 'R', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", date : "2014"},
+    {_id: 1, address: 'Hydrogen', tel: '1.0079', user_id: 'H', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", status : "Pending", date : "2014"},
+    {_id: 2, address: 'Hydrogen', tel: '1.0079', user_id: 'T', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", status : "Pending", date : "2014"},
+    {_id: 3, address: 'Hydrogen', tel: '1.0079', user_id: 'U', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", status : "Pending", date : "2014"},
+    {_id: 4, address: 'Hydrogen', tel: '1.0079', user_id: 'I', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", status : "Pending", date : "2014"},
+    {_id: 5, address: 'Hydrogen', tel: '1.0079', user_id: 'R', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", status : "Pending", date : "2014"},
   ];
   ngOnInit(){
     console.log(this.ELEMENT_DATA[0].product_list.length);
@@ -28,7 +28,7 @@ export class ShowOrderComponent {
       this.product  = data;
     })
   }
-  displayedColumns: string[] = ['address', 'tel', 'user_id', 'product_list', "payment_method",'total','date', '_id',];
+  displayedColumns: string[] = ['address', 'tel', 'user_id', 'product_list', "payment_method",'total','date', "status" , '_id',];
   dataSource = new MatTableDataSource<PeriodicElement>(this.ELEMENT_DATA);
   
   @ViewChild(MatPaginator)
@@ -61,6 +61,7 @@ export interface PeriodicElement {
   payment_method: string;
   total : string;
   date : string;
+  status : string;
 } 
 
 
