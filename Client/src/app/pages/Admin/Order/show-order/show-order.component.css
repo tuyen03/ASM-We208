@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.Product_Wall {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+}
+.Product_Wall .Product_Wall_title {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Product_Wall .Product_Wall_title h1 {
+  font-size: 2rem;
+  font-weight: 4 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.Product_Wall .Product_list_wall {
+  width: 100%;
+  height: 90%;
+}
+.Product_Wall .Product_list_wall table {
+  width: 100%;
+  align-items: center;
+}
+
+.Edit:hover i {
+  color: #5C4ED9;
+}
+.Edit i {
+  font-size: 1.2rem;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+}
+button:hover {
+  color: red;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.event {
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=show-order.component.css.map */
