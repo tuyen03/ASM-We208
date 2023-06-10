@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -18,18 +18,31 @@ export class SigninComponent {
     });
   }
 
+
+
   handleSubmit() {
     const userData = {
       User_email: this.userForm.value.User_email || '',
       User_password: this.userForm.value.User_password || '',
     };
-
     this.http.post('http://localhost:8080/api/signin', userData)
       .subscribe(
-        (response) => {
-          console.log(response);
-          alert("Đăng nhập thành công")
-          // this.router.navigate(['signin'])
+        (response: any) => {
+          const user = response.checkUser;
+          // Chuyển đối tượng thành chuỗi JSON
+          const userJson = JSON.stringify(user);
+
+          // Lưu chuỗi JSON vào localStorage
+          localStorage.setItem('user', userJson);
+
+          console.log(user.User_role);
+          if (user.User_role === 'admin') {
+            alert("Login Successfully(admin)")
+            this.router.navigate(['Admin'])
+          } else {
+            alert("Login Successfully")
+            this.router.navigate([''])
+          }
         },
         (error) => {
           console.error(error);
@@ -38,11 +51,10 @@ export class SigninComponent {
           }
         }
       );
-
-
-
   }
+
+
   clearFieldError(fieldName: string) {
-    this.errorMessage[fieldName] = ''; // Xóa thông báo lỗi của trường nhập liệu khi người dùng rời khỏi nó
+    this.errorMessage[fieldName] = '';
   }
 }

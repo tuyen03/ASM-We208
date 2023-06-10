@@ -15,6 +15,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { HomePageComponent } from './pages/home-page/home-page/home-page.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 
 import { LayOutAdminComponent } from './layouts/Admin/lay-out-admin/lay-out-admin.component';
 import { DashBoardComponent } from './pages/Admin/dash-board/dash-board.component';
@@ -28,6 +29,7 @@ import { EditProductComponent } from './pages/Admin/CRUD_Product/edit-product/ed
 import { AddCategoryComponent } from './pages/Admin/CRUD_Category/add-category/add-category.component';
 import { ShowCategoryComponent } from './pages/Admin/CRUD_Category/show-category/show-category.component';
 import { EditCategoryComponent } from './pages/Admin/CRUD_Category/edit-category/edit-category.component';
+import { MyOrderComponent } from './pages/my-order/my-order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,9 @@ import { EditCategoryComponent } from './pages/Admin/CRUD_Category/edit-category
     EditProductComponent,
     AddCategoryComponent,
     ShowCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    ShoppingCartComponent,
+    MyOrderComponent,
   ],
   imports: [
     BrowserModule,

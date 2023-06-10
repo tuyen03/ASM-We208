@@ -1,11 +1,6 @@
 import User from "../Models/User";
-import bcrypt from "bcryptjs";
-import {
-  passwordSchema,
-  signinSchema,
-  signupSchema,
-  userSchema,
-} from "../Schemas/User";
+import bcrypt from 'bcryptjs'
+import { passwordSchema, signinSchema, signupSchema, userSchema } from "../Schemas/User";
 
 export const signup = async (req, res) => {
   try {
@@ -21,31 +16,31 @@ export const signup = async (req, res) => {
       });
     }
 
-    const checkUser = await User.findOne({ User_email: req.body.User_email });
+    const checkUser = await User.findOne({ User_email: req.body.User_email })
     if (checkUser) {
       return res.status(400).json({
         errors: {
-          User_email: "Email đã tồn tại",
-        },
-      });
+          User_email: "Email đã tồn tại"
+        }
+      })
     }
-    const hashedPassword = await bcrypt.hash(req.body.User_password, 5);
+    const hashedPassword = await bcrypt.hash(req.body.User_password, 5)
 
     const user = await User.create({
       User_name: req.body.User_name,
       User_email: req.body.User_email,
       User_password: hashedPassword,
-    });
+    })
     return res.status(201).json({
       message: "Tạo tài khoản thành công",
-      user,
-    });
+      user
+    })
   } catch (error) {
     return res.status(400).json({
-      message: error.message,
-    });
+      message: error.message
+    })
   }
-};
+}
 export const signin = async (req, res) => {
   try {
     const { error } = signinSchema.validate(req.body, { abortEarly: false });
@@ -60,36 +55,38 @@ export const signin = async (req, res) => {
       });
     }
 
-    const checkUser = await User.findOne({ User_email: req.body.User_email });
+    const checkUser = await User.findOne({ User_email: req.body.User_email })
     if (!checkUser) {
       return res.status(400).json({
         errors: {
-          User_email: "Email không tồn tại",
-        },
-      });
+          User_email: "Email không tồn tại"
+        }
+      })
+
+
     }
-    const checkPassword = await bcrypt.compare(
-      req.body.User_password,
-      checkUser.User_password
-    );
+    const checkPassword = await bcrypt.compare(req.body.User_password, checkUser.User_password)
     if (!checkPassword) {
       return res.status(400).json({
         errors: {
-          User_password: "Sai mật khẩu",
-        },
-      });
+          User_password: "Sai mật khẩu"
+        }
+      })
     }
 
     return res.status(201).json({
       message: "Đăng nhập thành công",
-      checkUser,
-    });
+      checkUser
+    })
   } catch (error) {
     return res.status(400).json({
-      message: error.message,
-    });
+      message: error.message
+    })
   }
-};
+
+}
+
+
 
 export const getUsers = async (req, res) => {
   try {
