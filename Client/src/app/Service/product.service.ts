@@ -34,6 +34,10 @@ export class ProductService {
   Get_Category_id({id} : any){
     return this.http.get(`http://localhost:8080/api/category/` + id);
   }
+  Get_Category_id_InterFace(id : any){
+    return this.http.get(`http://localhost:8080/api/category/` + id);
+  }
+  
   Delete_Category(id : any){
     return this.http.delete("http://localhost:8080/api/category/"+id);
   }
