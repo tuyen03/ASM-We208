@@ -10,6 +10,7 @@ export class ShoppingCartComponent implements OnInit {
   user: any; // Thêm thuộc tính user
   totalAmount: number = 0;
   userId: any;
+  count: number = 0;
 
   constructor() { }
 
@@ -25,6 +26,9 @@ export class ShoppingCartComponent implements OnInit {
         this.cartData = JSON.parse(storedCartData);
         this.calculateTotalAmount();
         this.userId = user._id;
+        this.count = this.cartData.length;
+        console.log(this.count);
+
       }
     }
   }
@@ -67,18 +71,21 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   removeCartItem(itemId: string): void {
-    // Tìm vị trí của phần tử trong mảng cartData
-    const index = this.cartData.findIndex(item => item.id === itemId);
+    const confirm = window.confirm('Are you sure you want to remove!')
+    if (confirm) {
+      // Tìm vị trí của phần tử trong mảng cartData
+      const index = this.cartData.findIndex(item => item.id === itemId);
+      if (index !== -1) {
+        // Xóa phần tử khỏi mảng cartData
+        this.cartData.splice(index, 1);
 
-    if (index !== -1) {
-      // Xóa phần tử khỏi mảng cartData
-      this.cartData.splice(index, 1);
+        // Cập nhật lại dữ liệu giỏ hàng
+        localStorage.setItem(this.userId, JSON.stringify(this.cartData));
+        this.count = this.cartData.length;
 
-      // Cập nhật lại dữ liệu giỏ hàng
-      localStorage.setItem(this.userId, JSON.stringify(this.cartData));
-
-      // Tính toán lại tổng số tiền
-      this.calculateTotalAmount();
+        // Tính toán lại tổng số tiền
+        this.calculateTotalAmount();
+      }
     }
   }
 
