@@ -20,6 +20,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { LayoutMenuComponent } from './layouts/layout-menu/layout-menu.component';
 import { DashBoardComponent } from './pages/Admin/dash-board/dash-board.component';
 import { LayOutAdminComponent } from './layouts/Admin/lay-out-admin/lay-out-admin.component';
+import { OrderDetailComponent } from './pages/Admin/Order/order-detail/order-detail.component';
 
 const routes: Routes = [
     {
@@ -49,6 +50,7 @@ const routes: Routes = [
 
             //todo Order Start
             { path: "Order", component: ShowOrderComponent },
+            { path: "Order/:id", component: OrderDetailComponent },
             //todo Order End
         ]
     },

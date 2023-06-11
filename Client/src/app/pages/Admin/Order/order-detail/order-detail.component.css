@@ -1,0 +1,29 @@
+.example-card {
+    border: solid 1px rgb(223, 217, 217);
+    padding: 5px;
+    margin: 0 40px;
+    width: 400px;
+}
+
+.example-header-image {
+    background-image: url('https://elstar.themenate.net/img/avatars/thumb-11.jpg');
+    background-size: cover;
+}
+
+.hehe {
+    border-top: solid 1px rgb(223, 217, 217);
+    margin: 10px 0;
+    padding-top: 10px;
+}
+.hihi {
+    border: solid 1px rgb(223, 217, 217);
+    margin: 0 10px;
+    padding-top: 10px;
+    width: 300px;
+    height: 200px;
+}
+.button{
+    background-color: gainsboro;
+    padding: 8px 40px;
+    margin: 20px 0;
+}
