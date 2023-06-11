@@ -1,69 +1,67 @@
 <div class="Product_Wall">
-    <div class="Product_Wall_title">
-            <h1>Product List</h1>
-    </div>
-    <div class="Product_list_wall">
-        <div class="mat-elevation-z8">
-            <table mat-table [dataSource]="dataSource">
-          
-              <!-- Position Column -->
-              <!-- Name Column -->
-              <ng-container matColumnDef="address">
-                <th mat-header-cell *matHeaderCellDef> Address </th>
-                <td mat-cell *matCellDef="let element"> {{element.address}} </td>
-              </ng-container>
-          
-              <!-- Weight Column -->
-              <ng-container matColumnDef="tel">
-                <th mat-header-cell *matHeaderCellDef> Tel </th>
-                <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
-              </ng-container>
+  <div class="Product_Wall_title">
+    <h1>Product List</h1>
+  </div>
+  <div class="Product_list_wall">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
 
-              <ng-container matColumnDef="user_id">
-                <th mat-header-cell *matHeaderCellDef> ID_User </th>
-                <td mat-cell *matCellDef="let element"> {{element.user_id}} </td>
-              </ng-container>
-          
-              <!-- Symbol Column -->
-              <ng-container matColumnDef="product_list">
-                <th mat-header-cell *matHeaderCellDef> Product_List </th>
-                <td mat-cell *matCellDef="let element"> {{element.product_list.length}} </td>
-              </ng-container>
+        <!-- Position Column -->
+        <!-- Name Column -->
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        </ng-container>
 
-              <ng-container matColumnDef="payment_method">
-                <th mat-header-cell *matHeaderCellDef> Payment </th>
-                <td mat-cell *matCellDef="let element"> {{element.payment_method}} </td>
-              </ng-container>
-              <ng-container matColumnDef="total">
-                <th mat-header-cell *matHeaderCellDef> Total </th>
-                <td mat-cell *matCellDef="let element"> {{element.total}} </td>
-              </ng-container>
-              <ng-container matColumnDef="date">
-                <th mat-header-cell *matHeaderCellDef> Date </th>
-                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
-              </ng-container>
-              <ng-container matColumnDef="status">
-                <th mat-header-cell *matHeaderCellDef> Status </th>
-                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-              </ng-container>
-              <ng-container matColumnDef="_id" >
-                <th mat-header-cell *matHeaderCellDef> Delete </th>
-                <td mat-cell *matCellDef="let element" class="Event">
-                  <div class="event">
-                    <a href="Admin/Edit_Product/{{element._id}}" class="Edit" ><i class="fa-solid fa-pencil"></i></a>
-                    <button (click)="Delete(element._id)" ><i class="fa-solid fa-trash-can"></i></button>
-                  </div>
-                </td>
-              </ng-container>
-          
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-          
-            <mat-paginator [pageSizeOptions]="[4, 8, 12]"
-                           showFirstLastButtons
-                           aria-label="Select page of periodic elements">
-            </mat-paginator>
-          </div>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="tel">
+          <th mat-header-cell *matHeaderCellDef> Tel </th>
+          <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="user_id">
+          <th mat-header-cell *matHeaderCellDef> ID_User </th>
+          <td mat-cell *matCellDef="let element"> {{element.user_id}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="product_list">
+          <th mat-header-cell *matHeaderCellDef> Product_List </th>
+          <td mat-cell *matCellDef="let element"> {{element.product_list.length}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="payment_method">
+          <th mat-header-cell *matHeaderCellDef> Payment </th>
+          <td mat-cell *matCellDef="let element"> {{element.payment_method}} </td>
+        </ng-container>
+        <ng-container matColumnDef="total">
+          <th mat-header-cell *matHeaderCellDef> Total </th>
+          <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+        <ng-container matColumnDef="_id">
+          <th mat-header-cell *matHeaderCellDef> Delete </th>
+          <td mat-cell *matCellDef="let element" class="Event">
+            <div class="event">
+              <a href="Admin/Edit_Product/{{element._id}}" class="Edit"><i class="fa-solid fa-pencil"></i></a>
+              <button (click)="Delete(element._id)"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[4, 8, 12]" showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
     </div>
+  </div>
 </div>

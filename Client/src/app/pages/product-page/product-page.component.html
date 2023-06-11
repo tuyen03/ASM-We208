@@ -1,18 +1,20 @@
 <div>
     <div class="my-20">
-        <div class="grid grid-cols-4 w-[800px] text-center mx-auto">
-            <div class="" *ngFor="let item of Category.data" >
-                <img src="../../../../assets/images/icon/burger.png" class="mx-auto my-2" width="50" alt="">
-                <p class="font-bold uppercase text-[20px] hover:cursor-pointer  " (click)="GetId_Category(item._id)" >{{item.Name_Category}}</p>
+        <div class="grid grid-cols-4 w-[50vw] text-center mx-auto">
+            <div class="" *ngFor="let item of Category.data">
+                <button class="font-bold uppercase text-[20px] hover:cursor-pointer  "
+                    (click)="GetId_Category(item._id)">{{item.Name_Category}}</button>
             </div>
 
         </div>
-        <div class="grid grid-cols-4 w-[1280px] gap-5 text-center mx-auto mt-20">
-            <div *ngFor="let item of CurrentData" >
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 w-[90vw] xl:w-[80vw] gap-5 text-center mx-auto mt-20">
+            <div *ngFor="let item of CurrentData">
                 <div class="border border-solid py-5 rounded-sm">
                     <img src="{{item.Product_Image}}" class="mx-auto" alt="">
                     <div class="flex justify-between m-5 items-center">
-                        <p class="bg-[#642f21] text-[#f7be27] py-1 px-3 rounded-sm font-bold text-[18px]">${{item.Product_Price}}</p>
+                        <p class="bg-[#642f21] text-[#f7be27] py-1 px-3 rounded-sm font-bold text-[18px]">
+                            ${{item.Product_Price}}</p>
                         <div class="text-[#f7be27]">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -25,18 +27,20 @@
                 <div>
                     <p class="font-bold text-[20px] text-[#642f21] my-3">{{item.Product_Name}}</p>
                     <div class="text-gray-500">{{item.Product_Description}}</div>
-                    <button class="border border-solid my-5 py-2 px-8 font-bold uppercase rounded-sm" routerLink="">
+                    <button class="border border-solid my-5 py-2 px-8 font-bold uppercase rounded-sm"
+                        routerLink="/product/{{item._id}}">
                         Add to card</button>
                 </div>
             </div>
 
         </div>
     </div>
-    <div class="hotline w-full bg-cover bg-center h-[500px]  ">
-        <div class="text-center w-[850px] mx-auto py-20">
+    <div class="hotline w-full bg-cover bg-center  py-32 ">
+        <div class="text-center w-[60vw] mx-auto ">
             <p class="text-[38px] Oswald uppercase">WE GUARANTEE</p>
             <p class="text-[60px] Oswald uppercase font-bold pt-10 ">30 MINUTES DELIVERY!</p>
-            <p class="text-[19px] pt-10">Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero
+            <p class="text-[19px] pt-10">Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis
+                libero
                 tempus, blandit a cursus varius luctus neque magna
             </p>
             <button class="text-[22px] text-white bg-red-500 py-3 px-7 mt-6">CALL:0393433049</button>

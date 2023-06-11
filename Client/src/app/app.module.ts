@@ -31,6 +31,10 @@ import { ShowCategoryComponent } from './pages/Admin/CRUD_Category/show-category
 import { EditCategoryComponent } from './pages/Admin/CRUD_Category/edit-category/edit-category.component';
 import { ShowOrderComponent } from './pages/Admin/Order/show-order/show-order.component';
 import { MyOrderComponent } from './pages/my-order/my-order.component';
+import { OrderDetailComponent } from './pages/Admin/Order/order-detail/order-detail.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +57,7 @@ import { MyOrderComponent } from './pages/my-order/my-order.component';
     ShowOrderComponent,
     ShoppingCartComponent,
     MyOrderComponent,
+    OrderDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +71,10 @@ import { MyOrderComponent } from './pages/my-order/my-order.component';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatGridListModule,
+    MatCardModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

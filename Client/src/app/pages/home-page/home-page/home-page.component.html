@@ -1,17 +1,16 @@
 <main>
-    <div class="products_by_category">
-        <div class="category">
-            <ul class="category_icon">
-                <li *ngFor="let item of Category.data;" >
-                    <div class="Text">
-                        <h2 (click)="GetId_Category(item._id)" >{{item.Name_Category}}</h2>
-                    </div>
-                </li>
-            </ul>
+    <div style="margin: 60px 0;" class="products_by_category">
+        <div style="text-align: center;margin: 0 auto;" class="grid grid-cols-4 w-[50vw]">
+            <div *ngFor="let item of Category.data;">
+                <button class="font-bold uppercase text-[20px]"
+                    (click)="GetId_Category(item._id)">{{item.Name_Category}}
+                </button>
+            </div>
         </div>
-        <div class="products">
-            <div class="products_wall">
-                <div class="product_List" *ngFor="let item of CurrentData" >
+
+        <div style="margin: 40px 0;" class="products">
+            <div class="products_wall mx-auto md:grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+                <div class="product_List" *ngFor="let item of CurrentData">
                     <div class="product_List_img">
                         <div class="product_List_heart">
                             <i class="fa-regular fa-heart"></i>
@@ -21,7 +20,7 @@
                         </div>
                         <div class="product_List_img_Text">
                             <div class="product_List_img_Text_price">
-                                <p>{{item.Product_Price}}</p>
+                                {{item.Product_Price}}
                             </div>
                             <div class="product_List_img_Text_Star">
                                 <i class="fa-solid fa-star"></i>
@@ -37,10 +36,10 @@
                             <h2>{{item.Product_Name}}</h2>
                         </div>
                         <div class="product_List_detail_description">
-                            <p>{{item.Product_Description}}</p>
+                            {{item.Product_Description}}
                         </div>
                         <div class="product_List_detail__button">
-                            <a href="">ADD TO CART</a>
+                            <a routerLink="/product/{{item._id}}">ADD TO CART</a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +47,7 @@
         </div>
     </div>
     <div class="Banner">
-        <div class="Banner_wall">
+        <div class="Banner_wall grid grid-cols-2 xl:flex">
             <div class="Banner_Order">
                 <div class="Banner_Order_wall">
                     <h4>THE</h4>
@@ -56,15 +55,15 @@
                     <h1>GENERAL</h1>
                     <p>Semper lacus cursus porta a primis feugiat ligula</p>
                     <p>risus auctor rhoncus semper undo</p>
-                    <div class="button">
-                        <a href="">ORDER NOW</a>
-                    </div>
+                    <button class="button">
+                        ORDER NOW
+                    </button>
                 </div>
             </div>
             <div class="Banner_Image">
                 <img src="../../../../assets/images/promo-11-img.png.png" alt="">
             </div>
-            <div class="Banner_Product">
+            <div class="Banner_Product ">
                 <div class="Banner_Product1">
                     <div class="Banner_Product1_img">
                         <img src="../../../../assets/images/burger-02.png.png" alt="">
@@ -88,6 +87,7 @@
             </div>
         </div>
     </div>
+
     <div class="Menu">
         <div class="Menu_title">
             <div class="Menu_title_child">
@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="Menu_Product">
-            <div class="Menu_Product_child">
+            <div class="Menu_Product_child mx-auto md:grid md:grid-cols-2 xl:grid-cols-4 gap-5">
                 <div class="Menu_Product_item" *ngFor="let item of CurrentMenu">
                     <div class="Menu_Product_item_img">
                         <img src="{{item.Product_Image}}" alt="">
@@ -116,7 +116,7 @@
                                     <i class="fa-regular fa-heart"></i>
                                 </div>
                             </div>
-                             <div class="Menu_Product_item_child_title">
+                            <div class="Menu_Product_item_child_title">
                                 <h1>{{item.Product_Name}}</h1>
                                 <p>{{item.Product_Description}}</p>
                             </div>
@@ -124,9 +124,9 @@
                                 <div class="Menu_Product_item_child_button_price">
                                     <p>${{item.Product_Price}}</p>
                                 </div>
-                                <div class="Menu_Product_item_child_button_cart">
-                                    <a href="">Add To Card</a>
-                                </div>
+                                <button routerLink="/product/{{item._id}}" class="Menu_Product_item_child_button_cart">
+                                    Add To Card
+                                </button>
                             </div>
                         </div>
                     </div>
