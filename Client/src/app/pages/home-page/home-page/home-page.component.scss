@@ -105,7 +105,10 @@ $blod : #FF6D60;
                             align-items: center;
                             p{
                                 color: $warning;
-                                padding: 5px 10px;
+                                width: 70px;
+                                height: 40px;
+                                text-align: center;
+                                padding-top: 5px;
                                 background-color: #642f21;
                                 font-size: 1.4rem;
                                 border-radius: 4px;
@@ -147,6 +150,7 @@ $blod : #FF6D60;
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        text-align: center;
                         p{
                             font-family: 'Roboto';
                             font-style: normal;

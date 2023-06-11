@@ -22,25 +22,20 @@ export class AddCategoryComponent {
     Name_Category : ["", [Validators.required]],
   })
   async HandSubMit(){
+    console.log("aaaa");
+    
     if (!this.FormData.valid) {
+    console.log("aaaa2");
+      
       alert("Xin vui Lòng nhập lại")
     }else{
+    console.log("aaaa1");
       const PostData : any = {
         Name_Category : this.FormData.value.Name_Category,
       }
-      for (const iterator of this.Category.data) {
-        console.log(iterator.Name_Category);
-        if (PostData.Name_Category == iterator.Name_Category) {
-          alert("Danh mục Đã Tồn tại");
-          return;
-        }else{
-          console.log(PostData);
-          this.Product.Post_Category(PostData).subscribe(data => {
-            alert("Thêm danh mục thành công");
-          })
-          return;
-        }
-      }
+      this.Product.Post_Category(PostData).subscribe(data => {
+        alert("Thêm danh mục thành công");
+      })
     }
 
   }

@@ -47,6 +47,10 @@ export class EditProductComponent {
   async HandSubMit(){
     if (this.FormData.valid) {
        const fileInput: any = document.getElementById('fileInput');
+       let name1:string = this.FormData.value.Product_Description!; 
+       const parser = new DOMParser();
+       const parsedData = parser.parseFromString(name1  , 'text/html');
+       const plainText = parsedData.body.textContent;
        if (this.FormData.value) {
           const cloud_name = "dsbiugddk";
           const upload_preset = "demo-ECMA";
@@ -66,7 +70,7 @@ export class EditProductComponent {
           Product_Price : this.FormData.value.Product_Price,
           Product_KG : this.FormData.value.Product_KG,
           Product_Image : this.imageUrl,
-          Product_Description : this.FormData.value.Product_Description,
+          Product_Description : plainText,
           CategoryId : this.FormData.value.CategoryId,
         }
         console.log(PostData);
