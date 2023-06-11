@@ -19,5 +19,4 @@ app.use("/api", Category);
 app.use("/api", RouterOrder);
 
 mongoose.connect(API);
-
 export const viteNodeApp = app;

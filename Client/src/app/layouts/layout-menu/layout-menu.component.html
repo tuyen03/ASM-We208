@@ -2,16 +2,20 @@
     <div id="header" class=" w-full bg-cover bg-center h-[450px]">
         <header
             class="bg-white px-12 w-full xl:px-[20vw] mx-auto items-center text-center fixed xl:flex justify-between ">
+
+            <!-- respon  -->
             <div class="xl:hidden py-3 bg-white grid grid-cols-5 w-full mx-auto items-center">
-                <img src="https://testo-livid.vercel.app/images/logo-01.png" width="120px"
+                <img src="https://testo-livid.vercel.app/images/logo-01.png" routerLink="/" width="120px"
                     class="col-end-4 col-span-1 mx-auto" alt="">
                 <img src="../../../../assets/images/icon/more.png" (click)="show()"
                     class="ml-auto xl:hidden col-end-7 col-span-2" alt="">
             </div>
+            <!-- respon  -->
 
 
             <!-- logo -->
-            <img src="https://testo-livid.vercel.app/images/logo-01.png" width="150px" class="hidden xl:block" alt="">
+            <img src="https://testo-livid.vercel.app/images/logo-01.png" routerLink="/" width="150px"
+                class="hidden xl:block" alt="">
             <!-- end -->
             <div class="xl:flex">
                 <div (click)="MegaClick()"
@@ -20,31 +24,25 @@
                         Mega Menu
                     </button>
                     <div style="width: 85%;padding: 30px;"
-                        class="dropdown-list {{megaMenuDD?'hidden':'block'}} left-32 grid-rows-3 grid-flow-col  ">
+                        class="dropdown-list {{megaMenuDD?'hidden':'block'}} left-32 grid-rows-3 grid-flow-col">
 
-                        <div *ngFor="let megaMenu of megaMenu" class="flex">
-                            <img routerLink="" src="https://testo-livid.vercel.app/images/img-05.jpg" width="150"
-                                alt="">
-                            <div class="mx-2">
-                                <button routerLink=""
-                                    class="font-bold text-lg hover:text-[#f7be27]">{{megaMenu.title}}</button>
-                                <p class="text-[14px] my-6">{{megaMenu.title_child}}</p>
+                        <div *ngFor="let megaMenu of CurrentData" class="flex">
+                            <img routerLink="" src="{{megaMenu.Product_Image}}" width="150" alt="">
+                            <div class="mx-2 text-left">
+                                <button routerLink="/product/{{megaMenu._id}}"
+                                    class="font-bold text-lg hover:text-[#f7be27]">{{megaMenu.Product_Name}}</button>
+                                <p class="text-[14px] my-6">{{megaMenu.Product_Description}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div *ngFor="let product of products;index as i" (click)="handleClick(i)"
+                <div *ngFor="let product of products;index as i"
                     class=" {{chill?'hidden':'block'}} dropdown my-2 hover:bg-neutral-100 xl:hover:bg-transparent">
-                    <button class="item-dropdown uppercase p-2 xl:p-7 text-black " type="button">
+                    <button routerLink="/{{product.link}}" class="item-dropdown uppercase p-2 xl:p-7 text-black "
+                        type="button">
                         {{product.title}}
                     </button>
-                    <ul class="dropdown-list {{product.status?'hidden':'block'}}  dropdown-list-res ">
-                        <li *ngFor="let product_child of product.title_child;">
-                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100"
-                                href="{{product_child.link}}" data-te-dropdown-item-ref>{{product_child.name}}</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </header>

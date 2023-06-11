@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService } from 'src/app/Service/product.service';
 
 @Component({
   selector: 'app-layout-menu',
@@ -11,103 +12,42 @@ export class LayoutMenuComponent {
   products = [
     {
       title: 'Home',
-      status: true,
-      title_child: [
-        {
-          name: 'Action',
-          link: '',
-        }
-        ,
-        {
-          name: 'Action',
-          link: '',
-        }
-        ,
-        {
-          name: 'Action',
-          link: '',
-        }
-        ,
-      ]
+      link:""
     },
     {
       title: 'OUR MENU',
-      status: true,
-      title_child: [
-        {
-          name: 'Action',
-          link: '',
-        }
-        ,
-        {
-          name: 'Action',
-          link: '',
-        }
-        ,
-        {
-          name: 'Action',
-          link: '',
-        }
-        ,
-      ]
+      link:"product"
     },
     {
       title: 'BLOG',
-      status: true,
-      title_child: [
-        {
-          name: 'Action',
-          link: '',
-        }
-        ,
-        {
-          name: 'Action',
-          link: '',
-        }
-        ,
-        {
-          name: 'Action',
-          link: '',
-        }
-        ,
-      ]
-    }
-  ]
-  megaMenu = [
-    {
-      title: 'ALIQUAM AND LOBORTIS...',
-      title_child: 'Donec nec faucibus lobortis viverra blandit semjusto',
-    },
-    {
-      title: 'ALIQUAM AND LOBORTIS...',
-      title_child: 'Donec nec faucibus lobortis viverra blandit semjusto',
-    },
-    {
-      title: 'ALIQUAM AND LOBORTIS...',
-      title_child: 'Donec nec faucibus lobortis viverra blandit semjusto',
-    },
-    {
-      title: 'ALIQUAM AND LOBORTIS...',
-      title_child: 'Donec nec faucibus lobortis viverra blandit semjusto',
-    },
-    {
-      title: 'ALIQUAM AND LOBORTIS...',
-      title_child: 'Donec nec faucibus lobortis viverra blandit semjusto',
-    },
-    {
-      title: 'ALIQUAM AND LOBORTIS...',
-      title_child: 'Donec nec faucibus lobortis viverra blandit semjusto',
+      link:"product"
     }
   ]
 
   show() {
     this.chill = !this.chill;
   };
-  handleClick(i: any) {
-    this.products[i].status = !this.products[i].status
-  }
   MegaClick() {
     this.megaMenuDD = !this.megaMenuDD
+  }
+  Category: any = [];
+  Data: any = [];
+  CurrentData: any = [];
+  Id = "6484925147a78159f1268ee3"
+  FakeData: any = [];
+  // this.Data.data.Product
+  constructor(private Product: ProductService) {
+    this.Product.Get_Category().subscribe(data => {
+      this.Category = data;
+    })
+    this.Product.Get_Category_id_InterFace(this.Id).subscribe(data => {
+      this.FakeData = data;
+      this.CurrentData = this.FakeData.data.Product;
+    })
+    this.Product.Get_Category_id_InterFace("6485b352a1bb38e357da3fc1").subscribe(data => {
+      this.Data = data;
+      this.CurrentData = this.Data.data.Product;
+    })
   }
 
 }
