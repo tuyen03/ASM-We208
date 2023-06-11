@@ -2,41 +2,26 @@
     <div class="products_by_category">
         <div class="category">
             <ul class="category_icon">
-                <li>
+                <li *ngFor="let item of Category.data;" >
                     <div class="Text">
-                        <h2>BERGERS</h2>
-                    </div>
-                </li>
-                <li>
-                    <div class="Text">
-                        <h2>SIDES</h2>
-                    </div>
-                </li>
-                <li>
-                    <div class="Text">
-                        <h2>SALADS</h2>
-                    </div>
-                </li>
-                <li>
-                    <div class="Text">
-                        <h2>DESSERTS</h2>
+                        <h2 (click)="GetId_Category(item._id)" >{{item.Name_Category}}</h2>
                     </div>
                 </li>
             </ul>
         </div>
         <div class="products">
             <div class="products_wall">
-                <div class="product_List">
+                <div class="product_List" *ngFor="let item of CurrentData" >
                     <div class="product_List_img">
                         <div class="product_List_heart">
                             <i class="fa-regular fa-heart"></i>
                         </div>
                         <div class="product_List_img_child">
-                            <img src="../../../assets/images/burger-06.png.png" alt="">
+                            <img src="{{item.Product_Image}}" alt="">
                         </div>
                         <div class="product_List_img_Text">
                             <div class="product_List_img_Text_price">
-                                <p>$8.95</p>
+                                <p>{{item.Product_Price}}</p>
                             </div>
                             <div class="product_List_img_Text_Star">
                                 <i class="fa-solid fa-star"></i>
@@ -49,124 +34,14 @@
                     </div>
                     <div class="product_List_detail">
                         <div class="product_List_detail_h1">
-                            <h2>ULTIMATE BACON</h2>
+                            <h2>{{item.Product_Name}}</h2>
                         </div>
                         <div class="product_List_detail_description">
-                            <p>Fried chicken breast, chilli sauce,
-                                <br> tomatoes, pickles, coleslaw
-                            </p>
+                            <p>{{item.Product_Description}}</p>
                         </div>
                         <div class="product_List_detail__button">
                             <a href="">ADD TO CART</a>
                         </div>
-                    </div>
-                </div>
-                <div class="product_List">
-                    <div class="product_List_img">
-                        <div class="product_List_heart">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="product_List_img_child">
-                            <img src="../../../assets/images/burger-02.png.png" alt="">
-                        </div>
-                        <div class="product_List_img_Text">
-                            <div class="product_List_img_Text_price">
-                                <p>$8.95</p>
-                            </div>
-                            <div class="product_List_img_Text_Star">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half-stroke"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product_List_detail">
-                        <div class="product_List_detail_h1">
-                            <h2>CRISPY CHICKEN</h2>
-                        </div>
-                        <div class="product_List_detail_description">
-                            <p>Fried chicken breast, chilli sauce,
-                                <br> tomatoes, pickles, coleslaw
-                            </p>
-                        </div>
-                        <div class="product_List_detail__button">
-                            <a href="">ADD TO CART</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="product_List">
-                    <div class="product_List_img">
-                        <div class="product_List_heart">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="product_List_img_child">
-                            <img src="../../../assets/images/burger-05.png.png" alt="">
-                        </div>
-                        <div class="product_List_img_Text">
-                            <div class="product_List_img_Text_price">
-                                <p>$8.95</p>
-                            </div>
-                            <div class="product_List_img_Text_Star">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half-stroke"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product_List_detail">
-                        <div class="product_List_detail_h1">
-                            <h2>SMOKEY HOUSE</h2>
-                        </div>
-                        <div class="product_List_detail_description">
-                            <p>Fried chicken breast, chilli sauce,
-                                <br> tomatoes, pickles, coleslaw
-                            </p>
-                        </div>
-                        <div class="product_List_detail__button">
-                            <a href="">ADD TO CART</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="product_List">
-                    <div class="product_List_img">
-                        <div class="product_List_heart">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="product_List_img_child">
-                            <img src="../../../../assets/images/burger-01.png.png" alt="">
-                        </div>
-                        <div class="product_List_img_Text">
-                            <div class="product_List_img_Text_price">
-                                <p>$8.95</p>
-                            </div>
-                            <div class="product_List_img_Text_Star">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half-stroke"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product_List_detail">
-                        <div class="product_List_detail_h1">
-                            <h2>TURKEY BURGER</h2>
-                        </div>
-                        <div class="product_List_detail_description">
-                            <p>Fried chicken breast, chilli sauce,
-                                <br> tomatoes, pickles, coleslaw
-                            </p>
-                        </div>
-                        <div class="product_List_detail__button">
-                            <a href="">ADD TO CART</a>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -223,9 +98,9 @@
         </div>
         <div class="Menu_Product">
             <div class="Menu_Product_child">
-                <div class="Menu_Product_item">
+                <div class="Menu_Product_item" *ngFor="let item of CurrentMenu">
                     <div class="Menu_Product_item_img">
-                        <img src="../../../../assets/images/burger-11.jpg.png" alt="">
+                        <img src="{{item.Product_Image}}" alt="">
                     </div>
                     <div class="Menu_Product_item_title">
                         <div class="Menu_Product_item_title_wall">
@@ -241,13 +116,13 @@
                                     <i class="fa-regular fa-heart"></i>
                                 </div>
                             </div>
-                            <div class="Menu_Product_item_child_title">
-                                <h1>CRISPY CHICKEN</h1>
-                                <p>Chicken breast, chilli sauce, tomatoes, pickles, coleslaw</p>
+                             <div class="Menu_Product_item_child_title">
+                                <h1>{{item.Product_Name}}</h1>
+                                <p>{{item.Product_Description}}</p>
                             </div>
                             <div class="Menu_Product_item_child_button ">
                                 <div class="Menu_Product_item_child_button_price">
-                                    <p>$8.50</p>
+                                    <p>${{item.Product_Price}}</p>
                                 </div>
                                 <div class="Menu_Product_item_child_button_cart">
                                     <a href="">Add To Card</a>
@@ -256,238 +131,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="Menu_Product_item">
-                    <div class="Menu_Product_item_img">
-                        <img src="../../../../assets/images/burger-11.jpg.png" alt="">
-                    </div>
-                    <div class="Menu_Product_item_title">
-                        <div class="Menu_Product_item_title_wall">
-                            <div class="heart">
-                                <div class="heart_star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                </div>
-                                <div class="heart_icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="Menu_Product_item_child_title">
-                                <h1>CRISPY CHICKEN</h1>
-                                <p>Chicken breast, chilli sauce, tomatoes, pickles, coleslaw</p>
-                            </div>
-                            <div class="Menu_Product_item_child_button ">
-                                <div class="Menu_Product_item_child_button_price">
-                                    <p>$8.50</p>
-                                </div>
-                                <div class="Menu_Product_item_child_button_cart">
-                                    <a href="">Add To Card</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Menu_Product_item">
-                    <div class="Menu_Product_item_img">
-                        <img src="../../../../assets/images/burger-11.jpg.png" alt="">
-                    </div>
-                    <div class="Menu_Product_item_title">
-                        <div class="Menu_Product_item_title_wall">
-                            <div class="heart">
-                                <div class="heart_star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                </div>
-                                <div class="heart_icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="Menu_Product_item_child_title">
-                                <h1>CRISPY CHICKEN</h1>
-                                <p>Chicken breast, chilli sauce, tomatoes, pickles, coleslaw</p>
-                            </div>
-                            <div class="Menu_Product_item_child_button ">
-                                <div class="Menu_Product_item_child_button_price">
-                                    <p>$8.50</p>
-                                </div>
-                                <div class="Menu_Product_item_child_button_cart">
-                                    <a href="">Add To Card</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Menu_Product_item">
-                    <div class="Menu_Product_item_img">
-                        <img src="../../../../assets/images/burger-11.jpg.png" alt="">
-                    </div>
-                    <div class="Menu_Product_item_title">
-                        <div class="Menu_Product_item_title_wall">
-                            <div class="heart">
-                                <div class="heart_star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                </div>
-                                <div class="heart_icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="Menu_Product_item_child_title">
-                                <h1>CRISPY CHICKEN</h1>
-                                <p>Chicken breast, chilli sauce, tomatoes, pickles, coleslaw</p>
-                            </div>
-                            <div class="Menu_Product_item_child_button ">
-                                <div class="Menu_Product_item_child_button_price">
-                                    <p>$8.50</p>
-                                </div>
-                                <div class="Menu_Product_item_child_button_cart">
-                                    <a href="">Add To Card</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Menu_Product_item">
-                    <div class="Menu_Product_item_img">
-                        <img src="../../../../assets/images/burger-11.jpg.png" alt="">
-                    </div>
-                    <div class="Menu_Product_item_title">
-                        <div class="Menu_Product_item_title_wall">
-                            <div class="heart">
-                                <div class="heart_star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                </div>
-                                <div class="heart_icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="Menu_Product_item_child_title">
-                                <h1>CRISPY CHICKEN</h1>
-                                <p>Chicken breast, chilli sauce, tomatoes, pickles, coleslaw</p>
-                            </div>
-                            <div class="Menu_Product_item_child_button ">
-                                <div class="Menu_Product_item_child_button_price">
-                                    <p>$8.50</p>
-                                </div>
-                                <div class="Menu_Product_item_child_button_cart">
-                                    <a href="">Add To Card</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Menu_Product_item">
-                    <div class="Menu_Product_item_img">
-                        <img src="../../../../assets/images/burger-11.jpg.png" alt="">
-                    </div>
-                    <div class="Menu_Product_item_title">
-                        <div class="Menu_Product_item_title_wall">
-                            <div class="heart">
-                                <div class="heart_star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                </div>
-                                <div class="heart_icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="Menu_Product_item_child_title">
-                                <h1>CRISPY CHICKEN</h1>
-                                <p>Chicken breast, chilli sauce, tomatoes, pickles, coleslaw</p>
-                            </div>
-                            <div class="Menu_Product_item_child_button ">
-                                <div class="Menu_Product_item_child_button_price">
-                                    <p>$8.50</p>
-                                </div>
-                                <div class="Menu_Product_item_child_button_cart">
-                                    <a href="">Add To Card</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Menu_Product_item">
-                    <div class="Menu_Product_item_img">
-                        <img src="../../../../assets/images/burger-11.jpg.png" alt="">
-                    </div>
-                    <div class="Menu_Product_item_title">
-                        <div class="Menu_Product_item_title_wall">
-                            <div class="heart">
-                                <div class="heart_star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                </div>
-                                <div class="heart_icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="Menu_Product_item_child_title">
-                                <h1>CRISPY CHICKEN</h1>
-                                <p>Chicken breast, chilli sauce, tomatoes, pickles, coleslaw</p>
-                            </div>
-                            <div class="Menu_Product_item_child_button ">
-                                <div class="Menu_Product_item_child_button_price">
-                                    <p>$8.50</p>
-                                </div>
-                                <div class="Menu_Product_item_child_button_cart">
-                                    <a href="">Add To Card</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Menu_Product_item">
-                    <div class="Menu_Product_item_img">
-                        <img src="../../../../assets/images/burger-11.jpg.png" alt="">
-                    </div>
-                    <div class="Menu_Product_item_title">
-                        <div class="Menu_Product_item_title_wall">
-                            <div class="heart">
-                                <div class="heart_star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                </div>
-                                <div class="heart_icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="Menu_Product_item_child_title">
-                                <h1>CRISPY CHICKEN</h1>
-                                <p>Chicken breast, chilli sauce, tomatoes, pickles, coleslaw</p>
-                            </div>
-                            <div class="Menu_Product_item_child_button ">
-                                <div class="Menu_Product_item_child_button_price">
-                                    <p>$8.50</p>
-                                </div>
-                                <div class="Menu_Product_item_child_button_cart">
-                                    <a href="">Add To Card</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
