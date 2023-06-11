@@ -1,1 +1,203 @@
-<p>my-order works!</p>
+<div class="">
+    <header class="w-full ">
+        <div class="relative ">
+            <img class=" w-full h-[420px] object-cover" src="../../../assets/images/cart-page.jpg" alt="">
+        </div>
+        <div class=" w-[1140px] mx-auto text-center">
+            <div class="absolute w-[1140px] top-0 mt-6">
+
+                <div class=" flex items-center justify-between">
+                    <div class="">
+                        <img src="../../../assets/images/logo-3.png" alt="logo">
+                    </div>
+                    <div class="">
+                        <ul class="flex items-center">
+                            <li class="">
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">ABOUT</a>
+                            </li>
+                            <li class="">
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">OUR
+                                    MENU</a>
+                            </li>
+                            <li class="">
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">SHOP</a>
+                            </li>
+                            <li class="">
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">BLOG</a>
+                            </li>
+                            <li class="">
+                                <a class="text-white px-3 text-lg font-semibold hover:text-[#F7BE27]" href="">HOURS &
+                                    LOCATIONS</a>
+                            </li>
+                            <li class="">
+                                <span class="text-[#F7BE27] px-3 text-[28px] font-bold">789-654-3210</span>
+                            </li>
+                            <li class="">
+                                <a href="">
+                                    <div class="relative">
+                                        <svg width="64px" height="64px" viewBox="-12.96 -12.96 49.92 49.92" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke="#CCCCCC" stroke-width="0.048"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M8 11.01V11M16 11.01V11M8 8V7C8 5.93913 8.42143 4.92172 9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.5786 4.92172 16 5.93913 16 7V8M8 8H6.84027C5.80009 8 4.93356 8.79732 4.84718 9.83391L4.18051 17.8339C4.08334 18.9999 5.00352 20 6.1736 20H17.8264C18.9965 20 19.9167 18.9999 19.8195 17.8339L19.1528 9.83391C19.0664 8.79732 18.1999 8 17.1597 8H16M8 8H16"
+                                                    stroke="#ffffff" stroke-width="0.9" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="absolute top-[10px] right-4 items-center">
+                                        <i class="fa-solid fa-circle fa-sm text-lg relative"
+                                            style="color: #ff0000;"></i>
+                                        <span class=" w-full text-white absolute text-xs top-[5.5px] left-0">
+                                            1
+                                        </span>
+                                    </div>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-white text-[65px] uppercase font-bold my-20 ">
+                    MY ORDER
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="">
+        <div class="w-[1140px] mx-auto mt-10">
+            <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10">
+
+                <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
+                    <path
+                        d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
+                </svg>
+                Continue Shopping
+            </a>
+            <div class="mt-6">
+                <div class="" *ngFor="let item of filterData">
+                    <div class="flex justify-between  shadow-md rounded-lg border mx-auto mb-10">
+                        <div class="w-[65%] bg-white px-10 py-10">
+                            <div class="flex items-center justify-between pb-5 border-b-2">
+                                <div class="flex items-center">
+                                    <span class="block text-3xl mr-3 ">#Order Items</span>
+                                    <span class="flex items-center text-base"
+                                        [ngClass]="{'text-yellow-400': item.status === 'Pending','text-red-400': item.status === 'Failed', 'text-green-400': item.status === 'Paid'}">
+                                        <span class="fa-solid fa-circle text-[8px] mx-1"></span>
+                                        {{ item.status }}
+                                    </span>
+                                </div>
+                                <div class="">
+                                    <span class="block text-sm text-gray-400">Date: {{item.date}}</span>
+                                </div>
+                            </div>
+                            <div class="flex mt-7 mb-5">
+                                <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product</h3>
+                                <h3 class="font-semibold  text-gray-600 text-xs uppercase w-1/5 text-center">Quantity
+                                </h3>
+                                <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5 text-center">Price</h3>
+                                <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
+                            </div>
+                            <!-- products -->
+                            <div class="" *ngFor="let product of item.product_list">
+                                <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                                    <div class="flex w-2/5 items-center">
+                                        <div class="">
+                                            <img class="w-20 object-cover rounded-full"
+                                                src="https://jthemes.net/themes/html/testo/files/images/menu/burger-06.png"
+                                                alt="">
+                                        </div>
+                                        <div class="flex flex-col  ml-4 flex-grow">
+                                            <span class="font-bold text-lg">{{product.name}}</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-center w-1/5 font-semibold text-sm">{{product.quantity}}</span>
+                                    <span class="text-center w-1/5 font-semibold text-sm">${{product.price}}</span>
+                                    <span class="text-center w-1/5 font-semibold text-sm">${{product.quantity *
+                                        product.price}}</span>
+                                </div>
+                            </div>
+
+                            <div class="border-t-2 py-5 flex justify-between">
+                                <span class="block w-2/5 font-semibold text-lg">TOTAL</span>
+                                <span class="block w-1/5"></span>
+                                <span class="block w-1/5"></span>
+                                <span class="block w-1/5"></span>
+                                <span class="block w-1/5 text-center font-semibold text-sm pr-2">${{item.total}}</span>
+                            </div>
+                        </div>
+                        <div id="summary" class="w-[35%] px-8 pt-2 pb-5 border-l-2 m-9">
+                            <span class="block text-3xl border-b-2 pb-4">#Customer</span>
+                            <div class="flex justify-between my-3">
+                                <span class=" text-base mr-1">Full name:</span>
+                                <span class="text-base">{{item.name}}</span>
+                            </div>
+                            <div class="flex justify-between my-3">
+                                <span class=" text-base mr-1">Tel:</span>
+                                <span class=" text-base">{{item.tel}}</span>
+                            </div>
+                            <div class="flex justify-between my-3">
+                                <span class=" text-base mr-1">Address: </span>
+                                <span class=" text-base">{{item.address}}</span>
+                            </div>
+
+                            <div class="border-t mt-8">
+                                <ng-template [ngIf]="item.status === 'Pending'">
+                                    <button (click)="updateStatus(item._id)"
+                                        class="bg-red-500 font-semibold hover:bg-red-600 py-3 text-sm text-white w-full">Faided</button>
+                                </ng-template>
+                                <ng-template [ngIf]="item.status !== 'Pending'">
+                                    <button (click)="deleteOrders(item._id)"
+                                        class="bg-blue-500 font-semibold hover:bg-blue-600 py-3 text-sm text-white w-full">Delete</button>
+                                </ng-template>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="relative ">
+            <img class=" w-full h-[486px] object-cover" src="../../../assets/images/Section-Cart.png" alt="">
+        </div>
+    </main>
+    <footer class="w-[1140px] mx-auto py-20">
+        <div class="flex justify-between">
+            <div class="">
+                <img src="../../../assets/images/logo-3.png" alt="">
+                <span>
+                    © 2020 Testo. All Rights Reserved
+                </span>
+            </div>
+            <div class="font-semibold">
+                <span class="block">
+                    Los Angeles,
+                </span>
+                <span class="block">
+                    8721 M Central Avenue, CA 90036
+                </span>
+                <span class="block">
+                    Email: hello@yourdomain.com
+                </span>
+                <span class="block">
+                    Call Now: <p class="text-[#F7BE27] px-3 text-[20px] font-bold">789-654-3210</p>
+                </span>
+            </div>
+            <div class="grid grid-cols-3 gap-1">
+                <img src="../../../assets/images/Album1.png" alt="">
+                <img src="../../../assets/images/Album2.png" alt="">
+                <img src="../../../assets/images/Album3.png" alt="">
+                <img src="../../../assets/images/Album4.png" alt="">
+                <img src="../../../assets/images/Album5.png" alt="">
+                <img src="../../../assets/images/Album6.png" alt="">
+            </div>
+        </div>
+    </footer>
+</div>

@@ -41,7 +41,6 @@ const routes: Routes = [
             { path: "Show_Product", component: ShowProductComponent },
             { path: "Edit_Product/:id", component: EditProductComponent },
 
-
             //todo CategoriesComponent Start
             { path: "Category", component: AddCategoryComponent },
             { path: "Show_Category", component: ShowCategoryComponent },

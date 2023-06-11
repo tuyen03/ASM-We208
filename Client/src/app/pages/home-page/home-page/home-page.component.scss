@@ -59,14 +59,23 @@ $blod : #FF6D60;
                     .product_List_img_Text {
                         width: 100%;
                         display: flex;
-
-                        .product_List_img_Text_price {
-                            color: $warning;
-                            padding: 5px 10px;
-                            background-color: #642f21;
-                            font-size: 1.4rem;
-                            border-radius: 4px;
-                            font-weight: 900;
+                        .product_List_img_Text_price{
+                            width: 30%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            p{
+                                color: $warning;
+                                width: 70px;
+                                height: 40px;
+                                text-align: center;
+                                padding-top: 5px;
+                                background-color: #642f21;
+                                font-size: 1.4rem;
+                                border-radius: 4px;
+                                font-weight: 900;
+                            }
                         }
 
                         .product_List_img_Text_Star {
@@ -109,6 +118,8 @@ $blod : #FF6D60;
                         align-items: center;
 
                         p {
+                        text-align: center;
+                  
                             font-family: 'Roboto';
                             font-style: normal;
                             font-weight: 300;

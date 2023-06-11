@@ -36,7 +36,7 @@ export class EditCategoryComponent {
         Name_Category : this.FormData.value.Name_Category,
       }
       this.Product.Put_Product(PostData).subscribe(data => {
-        alert("Thêm danh mục thành công");
+        alert("Thêm xửa thành công");
       })
     }
   }

@@ -58,7 +58,10 @@ main {
 
 .products_by_category .products .products_wall .product_List .product_List_img .product_List_img_Text .product_List_img_Text_price {
   color: #ffc107;
-  padding: 5px 10px;
+  width: 70px;
+  height: 40px;
+  text-align: center;
+  padding-top: 5px;
   background-color: #642f21;
   font-size: 1.4rem;
   border-radius: 4px;
@@ -100,6 +103,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .products_by_category .products .products_wall .product_List .product_List_detail .product_List_detail_description p {

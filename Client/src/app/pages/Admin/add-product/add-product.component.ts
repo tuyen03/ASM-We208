@@ -30,11 +30,14 @@ export class AddProductComponent {
   }
   async HandSubMit(){
     console.log("aaaa");
-    
     if (this.FormData.valid) {
          console.log("aaaa");
        const fileInput: any = document.getElementById('fileInput');
        const Select: any = document.getElementById('Select');
+       let name1:string = this.FormData.value.Product_Description!; 
+       const parser = new DOMParser();
+       const parsedData = parser.parseFromString(name1  , 'text/html');
+       const plainText = parsedData.body.textContent;
        if (this.FormData.value) {
           const cloud_name = "dsbiugddk";
           const upload_preset = "demo-ECMA";
@@ -53,14 +56,14 @@ export class AddProductComponent {
           Product_Price : this.FormData.value.Product_Price,
           Product_KG : this.FormData.value.Product_KG,
           Product_Image : this.imageUrl,
-          Product_Description : this.FormData.value.Product_Description,
+          Product_Description : plainText,
           CategoryId : Select.value
         }
         console.log(PostData);
-        this.Product.Add_Product(PostData).subscribe((data) => {
-          console.log(data);
-          alert("Them Thanh cong")
-        });
+        // this.Product.Add_Product(PostData).subscribe((data) => {
+        //   console.log(data);
+        //   alert("Them Thanh cong")
+        // });
       }
     }
   }

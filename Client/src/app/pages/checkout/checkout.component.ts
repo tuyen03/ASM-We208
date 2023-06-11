@@ -23,6 +23,7 @@ export class CheckoutComponent {
       address: [''],
       tel: [''],
       payment_method: ['COD'],
+      status: ['Pending'],
     });
   }
 
@@ -53,40 +54,45 @@ export class CheckoutComponent {
   }
 
   handleSubmit() {
-    const data = {
-      name: this.checkoutForm.value.name || '',
-      address: this.checkoutForm.value.address || '',
-      tel: this.checkoutForm.value.tel || '',
-      user_id: this.userId,
-      product_list: this.cartData,
-      payment_method: this.checkoutForm.value.payment_method || '',
-      total: JSON.stringify(this.totalAmount),
-      date: this.getCurrentDate(),
-    };
-    console.log(data);
+    const confirm = window.confirm('Are you sure you want to order?')
+    if (confirm) {
+      const data = {
+        name: this.checkoutForm.value.name || '',
+        address: this.checkoutForm.value.address || '',
+        tel: this.checkoutForm.value.tel || '',
+        status: this.checkoutForm.value.status || '',
+        user_id: this.userId,
+        product_list: this.cartData,
+        payment_method: this.checkoutForm.value.payment_method || '',
+        total: JSON.stringify(this.totalAmount),
+        date: this.getCurrentDate(),
+      };
+      console.log(data);
 
-    this.http.post('http://localhost:8080/api/order', data)
-      .subscribe(
-        (response) => {
-          console.log(response);
-          alert("Đặt hàng thành công");
+      this.http.post('http://localhost:8080/api/order', data)
+        .subscribe(
+          (response) => {
+            console.log(response);
+            alert("Order Success!");
 
-          // Xóa giỏ hàng từ localStorage
-          const userJson = localStorage.getItem('user');
-          if (userJson) {
-            const user = JSON.parse(userJson);
-            localStorage.removeItem(user._id);
+            // Xóa giỏ hàng từ localStorage
+            const userJson = localStorage.getItem('user');
+            if (userJson) {
+              const user = JSON.parse(userJson);
+              localStorage.removeItem(user._id);
+            }
+
+            this.router.navigate(['my-order']);
+          },
+          (error) => {
+            console.error(error);
+            if (error.error && error.error.errors) {
+              this.errorMessage = error.error.errors;
+            }
           }
+        );
+    }
 
-          this.router.navigate(['my-order']);
-        },
-        (error) => {
-          console.error(error);
-          if (error.error && error.error.errors) {
-            this.errorMessage = error.error.errors;
-          }
-        }
-      );
   }
 
   getCurrentDate(): string {
