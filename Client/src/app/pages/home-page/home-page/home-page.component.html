@@ -2,15 +2,15 @@
     <div style="margin: 60px 0;" class="products_by_category">
         <div style="text-align: center;margin: 0 auto;" class="grid grid-cols-4 w-[50vw]">
             <div *ngFor="let item of Category.data;">
-                <img src="../../../../assets/images/icon/burger.png" style="margin: 16px auto;" width="50" alt="">
-                <h2 (click)="GetId_Category(item._id)">{{item.Name_Category}}</h2>
+                <button class="font-bold uppercase text-[20px]"
+                    (click)="GetId_Category(item._id)">{{item.Name_Category}}
+                </button>
             </div>
         </div>
 
         <div style="margin: 40px 0;" class="products">
             <div class="products_wall mx-auto md:grid md:grid-cols-2 xl:grid-cols-4 gap-5">
                 <div class="product_List" *ngFor="let item of CurrentData">
-
                     <div class="product_List_img">
                         <div class="product_List_heart">
                             <i class="fa-regular fa-heart"></i>
@@ -20,8 +20,7 @@
                         </div>
                         <div class="product_List_img_Text">
                             <div class="product_List_img_Text_price">
-
-                                <p>{{item.Product_Price}}</p>
+                                {{item.Product_Price}}
                             </div>
                             <div class="product_List_img_Text_Star">
                                 <i class="fa-solid fa-star"></i>
@@ -37,10 +36,10 @@
                             <h2>{{item.Product_Name}}</h2>
                         </div>
                         <div class="product_List_detail_description">
-                            <p>{{item.Product_Description}}</p>
+                            {{item.Product_Description}}
                         </div>
                         <div class="product_List_detail__button">
-                            <a href="">ADD TO CART</a>
+                            <a routerLink="/product/{{item._id}}">ADD TO CART</a>
                         </div>
                     </div>
                 </div>
@@ -125,7 +124,7 @@
                                 <div class="Menu_Product_item_child_button_price">
                                     <p>${{item.Product_Price}}</p>
                                 </div>
-                                <button class="Menu_Product_item_child_button_cart">
+                                <button routerLink="/product/{{item._id}}" class="Menu_Product_item_child_button_cart">
                                     Add To Card
                                 </button>
                             </div>
