@@ -33,4 +33,8 @@ export const orderSchema = joi.object({
         "any.required": "date is required.",
         "string.empty": "Please enter a Full Name."
     }),
+    status: joi.string().required().messages({
+        "any.required": "str is required.",
+        "string.empty": "Please enter a status."
+    }),
 })

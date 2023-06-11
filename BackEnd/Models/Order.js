@@ -10,7 +10,7 @@ const orderSchema = new mongoose.Schema(
         payment_method: String,
         total: String,
         date: String,
-        status: { type: String, default: 'Pending' },
+        status: String,
     },
     { timestamps: true, versionKey: false }
 );

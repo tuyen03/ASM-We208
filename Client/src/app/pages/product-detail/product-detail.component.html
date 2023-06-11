@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="text-white text-[65px] uppercase font-bold my-20 ">
-                    {{ product.name }}
+                    {{ product.Product_Name }}
                 </div>
             </div>
         </div>
@@ -70,13 +70,13 @@
         <div class="w-[1140px] mx-auto">
             <div class="flex justify-between mt-12">
                 <div class="">
-                    <img class="w-[550px] h-[450px] object-cover" src="{{ product.image }}" alt="">
+                    <img class="w-[550px] h-[450px] object-cover" src="{{ product.Product_Image }}" alt="">
                 </div>
                 <div class="w-[450px]">
                     <div class="text-[34px] font-bold uppercase">
-                        {{ product.name }}
+                        {{ product.Product_Name }}
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center mt-2">
                         <i class="fa-solid fa-star fa-sm mr-1" style="color: #F7BE27;"></i>
                         <i class="fa-solid fa-star fa-sm mr-1" style="color: #F7BE27;"></i>
                         <i class="fa-solid fa-star fa-sm mr-1" style="color: #F7BE27;"></i>
@@ -90,7 +90,7 @@
                     <div class="my-2">
                         <!-- <span class="text-[28px] text-[#BABBBC] font-bold mr-2 line-through">{{ product.price
                             }}$</span> -->
-                        <span class="text-[28px] text-[#F7BE27] font-bold mr-2">${{ product.price }}</span>
+                        <span class="text-[28px] text-[#F7BE27] font-bold mr-2">${{ product.Product_Price }}</span>
                     </div>
                     <div class="text-gray-500">
                         Integer congue magna at pretium purus pretium ligula
@@ -100,15 +100,15 @@
                     <div class="my-2">
                         <div class="flex justify-between border-b-2 border-gray-500 border-dotted py-3">
                             <span class="text-[16px] font-bold">Portion Size:</span>
-                            <span class="text-[16px] pr-3">{{ product.size }}g</span>
+                            <span class="text-[16px] pr-3">{{ product.Product_KG }}g</span>
                         </div>
                         <div class="flex justify-between border-b-2 border-gray-500 border-dotted py-3">
                             <span class="text-[16px] font-bold">Calories:</span>
-                            <span class="text-[16px] pr-3">{{ product.calo }}Kj</span>
+                            <span class="text-[16px] pr-3">{{ product.Product_KG }}Kj</span>
                         </div>
                     </div>
                     <form class="my-5" (submit)="addToCart(product._id)">
-                        <input type="number" name="quantity" id="" [(ngModel)]="quantity"
+                        <input type="number" name="quantity" id="" [(ngModel)]="quantity" min="1"
                             class="border-2 border-gray-200 appearance-none rounded-[4px] w-20 h-10 pl-2 outline-none focus:border-gray-400 mr-3">
                         <button type="submit" class="w-[180px] h-10 rounded-[4px] bg-[#F7BE27] font-semibold">
                             Add to Cart</button>
