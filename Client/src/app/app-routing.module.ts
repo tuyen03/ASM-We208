@@ -59,7 +59,12 @@ const routes: Routes = [
             { path: ':id', component: ProductDetailComponent }
         ]
     },
-    { path: 'cart', component: ShoppingCartComponent },
+    {
+        path: "", component: LayoutMenuComponent, children: [
+            { path: 'cart', component: ShoppingCartComponent },
+        ]
+    },
+    
     { path: 'checkout', component: CheckoutComponent },
     { path: 'my-order', component: MyOrderComponent },
 ];

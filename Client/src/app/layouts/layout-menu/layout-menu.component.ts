@@ -19,8 +19,8 @@ export class LayoutMenuComponent {
       link:"product"
     },
     {
-      title: 'BLOG',
-      link:"product"
+      title: 'CART',
+      link:"cart"
     }
   ]
 

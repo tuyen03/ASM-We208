@@ -99,6 +99,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .products_by_category .products .products_wall .product_List .product_List_detail .product_List_detail_description p {
@@ -304,7 +305,7 @@ main {
   font-family: "Oswald";
   font-style: normal;
   font-weight: 900;
-  font-size: 22px;
+  font-size: 20px;
   color: #642F21;
 }
 

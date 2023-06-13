@@ -77,7 +77,7 @@ export class ProductDetailComponent implements OnInit {
         this.router.navigate(['cart'])
       }
     } else {
-      alert('Vui long đăng nhập')
+      alert('Please log in!')
     }
 
 

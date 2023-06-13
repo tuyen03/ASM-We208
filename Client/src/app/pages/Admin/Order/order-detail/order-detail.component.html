@@ -1,101 +1,65 @@
-<mat-grid-list cols="3" rowHeight="5:9">
-    <mat-grid-tile [colspan]="2">
-        <div>
-            <mat-card-content class="font-bold text-2xl">Order #{{Product._id}}</mat-card-content>
-            <table mat-table [dataSource]="dataSource">
-                <!-- Position Column -->
-                <!-- Name Column -->
-                <ng-container matColumnDef="image">
-                    <th mat-header-cell *matHeaderCellDef>Product </th>
-                    <img width="100" *matCellDef="let element" src="{{element.image}}" alt="">
-                </ng-container>
+<main class="">
+    <div class="flex justify-evenly p-10">
+        <div class="w-1/2 border-2 shadow-md rounded-md p-10">
+            <div class="flex items-center justify-between">
+                <span class="block text-[32px] font-semibold mb-5 mr-5">
+                    #ORDER ITEMS
+                </span>
+                <span class="-ml-36 mb-[20px]"
+                    [ngClass]="{'text-yellow-400': orderData.status === 'Pending','text-red-400': orderData.status === 'Failed', 'text-green-400': orderData.status === 'Paid'}">
+                    <i class="fa-sharp fa-solid fa-circle fa-xs"></i>
+                    {{orderData.status}}
+                </span>
 
-                <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef> </th>
-                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                </ng-container>
-                <!-- Weight Column -->
-                <ng-container matColumnDef="price">
-                    <th mat-header-cell *matHeaderCellDef> Price </th>
-                    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
-                </ng-container>
+                <div class="" *ngIf="orderData.status === 'Pending'">
+                    <button class="block mb-[20px] border-2 p-1 bg-green-500 outline-none text-white rounded-md ">
+                        Update
+                    </button>
+                </div>
+            </div>
+            <div class="flex ">
+                <span class="block w-2/5 text-lg font-semibold ">Product</span>
+                <span class="block w-1/5 text-lg font-semibold text-end">Price</span>
+                <span class="block w-1/5 text-lg font-semibold text-end">Quantity</span>
+                <span class="block w-1/5 text-lg font-semibold text-end">Total</span>
+            </div>
+            <div *ngFor="let item of orderData.product_list" class="flex h-14 items-center hover:bg-slate-100">
+                <span class=" w-2/5 flex items-center"><img class="mr-1 w-16 object-cover rounded-full"
+                        src="{{item.image}}" alt="anh"> {{item.name}}</span>
+                <span class="block w-1/5 text-end">${{item.price}}</span>
+                <span class="block w-1/5 text-end">{{item.quantity}}</span>
+                <span class="block w-1/5 text-end">${{item.price * item.quantity}}</span>
+            </div>
+            <div class=" flex h-14 items-center justify-between border-t-2 mt-5">
+                <span class="flex font-semibold">TOTAL</span>
+                <span class="block ">${{orderData.total}}</span>
+            </div>
 
-                <ng-container matColumnDef="quantity">
-                    <th mat-header-cell *matHeaderCellDef> Quantity </th>
-                    <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
-                </ng-container>
-
-                <!-- Symbol Column -->
-                <ng-container matColumnDef="total">
-                    <th mat-header-cell *matHeaderCellDef> total </th>
-                    <td mat-cell *matCellDef="let element"> {{element.total}} </td>
-                </ng-container>
-
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-            <mat-paginator [pageSizeOptions]="[3, 8, 12]" showFirstLastButtons
-                aria-label="Select page of periodic elements">
-            </mat-paginator>
-            <mat-grid-list cols="2" rowHeight="1:1">
-                <mat-grid-tile>
-                    <mat-card-content class="hihi">
-                        <p class="font-bold text-[20px]">Shipping</p>
-                        <mat-grid-list cols="3" rowHeight="1:1">
-                            <mat-grid-tile>
-                                <img src="https://elstar.themenate.net/img/others/img-11.jpg" width="60" alt="">
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                <p>{{Product.payment_method}}</p>
-                            </mat-grid-tile>
-                            <mat-grid-tile>$15.00</mat-grid-tile>
-                        </mat-grid-list>
-                        <button class="button" mat-stroked-button>View Carrier Details</button>
-                    </mat-card-content>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card-content class="hihi">
-                        <p class="font-bold text-[20px]">Shipping Address</p>
-                        <mat-grid-list cols="2" rowHeight="3:1">
-                            <mat-grid-tile>Subtotal</mat-grid-tile>
-                            <mat-grid-tile>$1,762.00</mat-grid-tile>
-
-                            <mat-grid-tile>Delivery fee</mat-grid-tile>
-                            <mat-grid-tile>$15.00</mat-grid-tile>
-
-                            <mat-grid-tile>Tax(6%)</mat-grid-tile>
-                            <mat-grid-tile>$105.72</mat-grid-tile>
-
-                            <mat-grid-tile>Subtotal</mat-grid-tile>
-                            <mat-grid-tile>$1,870.72</mat-grid-tile>
-                        </mat-grid-list>
-                    </mat-card-content>
-                </mat-grid-tile>
-            </mat-grid-list>
         </div>
+        <div class="w-1/3 border-2 shadow-md rounded-md p-10">
+            <div class="border-b-2 pb-3">
+                <span class="block text-[32px] font-semibold">
+                    #CUSTOMER
+                </span>
+            </div>
+            <div class="py-2 flex items-center justify-between ">
+                <span class="text-md font-semibold ">Name: </span>
+                <span>{{orderData.name}}</span>
+            </div>
+            <div class="py-2 flex items-center justify-between">
+                <span class="text-md font-semibold ">TEL: </span>
+                <span>{{orderData.tel}}</span>
+            </div>
+            <div class="py-2 flex items-center justify-between">
+                <span class="text-md font-semibold ">Address: </span>
+                <span>{{orderData.address}}</span>
+            </div>
+            <div class="border-t-2 pt-3 mt-3">
+                <span class="block ">
+                    #CUSTOMER
+                </span>
+            </div>
 
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card class="example-card">
-            <mat-card-content class="font-bold text-2xl">Customer</mat-card-content>
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>{{Product.name}}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content class="hehe">
-                <p>{{Product.email}}</p>
-                <p>{{Product.tel}}</p>
-            </mat-card-content>
-            <mat-card-content class="hehe">
-                <p class="font-bold">Shipping Address</p>
-                <p>{{Product.address}}</p>
-            </mat-card-content>
-            <mat-card-content class="hehe">
-                <p class="font-bold">Billing address</p>
-                <p>100 Main ST
-                    PO Box 1022
-                    Seattle WA 98104</p>
-            </mat-card-content>
-        </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
+        </div>
+    </div>
+</main>

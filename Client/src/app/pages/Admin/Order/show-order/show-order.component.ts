@@ -2,6 +2,8 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { ProductService } from 'src/app/Service/product.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-show-order',
@@ -10,39 +12,25 @@ import { ProductService } from 'src/app/Service/product.service';
 })
 export class ShowOrderComponent {
   product : any = []
-  ELEMENT_DATA: PeriodicElement[] = [
-    {_id: 1, address: 'Hydrogen', tel: '1.0079', user_id: 'H', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", status : "Pending", date : "2014"},
-    {_id: 2, address: 'Hydrogen', tel: '1.0079', user_id: 'T', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", status : "Pending", date : "2014"},
-    {_id: 3, address: 'Hydrogen', tel: '1.0079', user_id: 'U', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", status : "Pending", date : "2014"},
-    {_id: 4, address: 'Hydrogen', tel: '1.0079', user_id: 'I', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", status : "Pending", date : "2014"},
-    {_id: 5, address: 'Hydrogen', tel: '1.0079', user_id: 'R', product_list : [{id : '1', quantity : 1, name : "keo", image : "anh1", price : 100}] , payment_method : "Visa", total : "1000", status : "Pending", date : "2014"},
-  ];
-  ngOnInit(){
-    console.log(this.ELEMENT_DATA[0].product_list.length);
-    console.log(this.dataSource);
-  }
-  
-  
-  constructor(private Data : ProductService){
+  Order : any = [];
+  FakeOrder : any = [];
+  dataSource : any;
+  constructor(private Data : ProductService, private http: HttpClient){
     this.Data.Get_Product().subscribe(data => {
       this.product  = data;
     })
+    this.Data.Get_Order().subscribe(data => {
+      this.Order = data;
+      this.FakeOrder = this.Order.data;
+      this.dataSource = new MatTableDataSource<PeriodicElement>(this.FakeOrder);
+      this.dataSource.paginator = this.paginator;
+    })
   }
-  displayedColumns: string[] = ['address', 'tel', 'user_id', 'product_list', "payment_method",'total','date', "status" , '_id',];
-  dataSource = new MatTableDataSource<PeriodicElement>(this.ELEMENT_DATA);
+  displayedColumns: string[] = ['address', 'tel', 'name' , 'user_id', "payment_method",'total','date', "status" , '_id',];
+
   
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  // @ViewChild(MatPaginator)
-  // paginator!: MatPaginator;
-
-  // ngAfterViewInit() {
-  //   this.product.paginator = this.paginator;
-  //   console.log(this.dataSource.data);
-  // }
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
   Delete(id : any){
     this.Data.Delete_Product(id).subscribe(data =>{
       if (confirm("Are you sure you want to delete this")) {
@@ -50,10 +38,14 @@ export class ShowOrderComponent {
       }
     })
   }
+
+  
 }
+
 
 export interface PeriodicElement {
   _id : number,
+  name : string,
   address: string;
   tel: string;
   user_id : string;
@@ -62,6 +54,5 @@ export interface PeriodicElement {
   total : string;
   date : string;
   status : string;
-} 
-
+}
 
